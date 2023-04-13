@@ -8,7 +8,9 @@ Renovating and refurnishing your home can be stressful process. Nook is there to
 
 My [wellbeing](./documentation/Wellbeing.md) plan
 
-[wireframes](https://www.figma.com/file/zAOciAoSCOpoWAnY4xiOWE/nook?node-id=0%3A1&t=wjFwuYGHtxri8kPb-1)
+The [kanban](https://polydactyl-cabinet-004.notion.site/Kanban-fb51965042f54820adab152606843714) on Notion
+
+Some [wireframes](https://www.figma.com/file/zAOciAoSCOpoWAnY4xiOWE/nook?node-id=0%3A1&t=wjFwuYGHtxri8kPb-1)
 
 ## Setup
 
