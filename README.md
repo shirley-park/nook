@@ -1,4 +1,4 @@
-# this is Nook
+# This is nook
 
 This repo is designed to provide space to code a fullstack app. It contains node modules and folders for databases, routes, api requests, react components, and redux actions and creators. Let's get going!
 
