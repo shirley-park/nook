@@ -52,13 +52,14 @@ This project will be built on React, Redux, Knex, and (possibly) Auth0.
 
 ---
 ## Stretch
-- ability to upload images
+- delete projects in the db (db function to delete, router.delete) and redux (action and thunk to delete project)
+- update projects in the db (db function to update, router.patch) and redux (action and thunk to update project)
+- delete elements in the db (db function to delete, router.delete) and redux (action and thunk to delete element)
+- update elements in the db (db function to update, router.patch) and redux (action and thunk to update element)
+
 - Auth0 authentication to login
+- ability to upload images
 - smooth page transition animations
-- delete projects in the db and redux
-- update projects in the db and redux
-- delete elements in the db and redux
-- update elements in the db and redux
 
 ---
 ## Gitflow
