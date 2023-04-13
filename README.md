@@ -6,8 +6,7 @@ Renovating and refurnishing your home can be stressful process. Nook is there to
 
 ### Here's the plan
 
-my [Wellbeing] (/Wellbeing.md) documentation
-
+My [wellbeing](./documentation/Wellbeing.md) plan
 
 ## Setup
 
