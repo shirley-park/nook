@@ -22,7 +22,7 @@ My [wellbeing](./documentation/Wellbeing.md) plan
     <summary>Tip</summary>
 
     You may also want to start a new branch
-    ```sh
+    ```
     cd my-fullstack-collection-scss
     npm i
     git checkout -b <branchname>
