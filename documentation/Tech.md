@@ -62,4 +62,4 @@ This project will be built on React, Redux, Knex, and (possibly) Auth0.
 
 ---
 ## Gitflow
-There will be two branches (server and client) and I create sub-branches under each for the specific feature I am working on.
+There will be two branches (server and client) and I create sub-branches under each for the specific feature I am working on. I will merge to the main branch once a specific feature or kanban task is complete.
