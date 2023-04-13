@@ -4,11 +4,12 @@ Nook is the result of my growing appreciation for architectural design and inter
 
 Renovating and refurnishing your home can be stressful process. Nook is there to remind you of you of your end goal, as well as keep notes on the elements required to meet that goal.
 
+### Here's the plan
+
+my [Wellbeing] (/Wellbeing.md) documentation
+
+
 ## Setup
-
-### Wellbeing plan
-
-Wellbeing.md
 
 ### 0. Cloning and installation
 - [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
