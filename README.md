@@ -8,6 +8,8 @@ Renovating and refurnishing your home can be stressful process. Nook is there to
 
 My [wellbeing](./documentation/Wellbeing.md) plan
 
+[wireframes](https://www.figma.com/file/zAOciAoSCOpoWAnY4xiOWE/nook?node-id=0%3A1&t=wjFwuYGHtxri8kPb-1)
+
 ## Setup
 
 ### 0. Cloning and installation
