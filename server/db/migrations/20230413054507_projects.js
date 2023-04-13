@@ -6,7 +6,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('projects', (table) => {
     table.increments('id')
     table.string('space')
-    table.longtext('description')
+    table.string('description')
     table.string('image_gallery')
   })
 }
