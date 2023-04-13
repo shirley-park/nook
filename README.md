@@ -1,6 +1,8 @@
 # This is nook
 
-This repo is designed to provide space to code a fullstack app. It contains node modules and folders for databases, routes, api requests, react components, and redux actions and creators. Let's get going!
+nook is the result of my growing appreciation for architectural design and interiors, general musings about the spaces we live in, and the ongoing quest to create a calm and considered living space.
+
+Renovating and refurnishing your home can be stressful process. Nook is there to remind you of you of your end goal, as well as keep notes on the elements required to meet that goal.
 
 ## Setup
 
