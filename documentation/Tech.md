@@ -10,9 +10,9 @@ This project will be built on React, Redux, Knex, and (possibly) Auth0.
 ### Server side
 
 #### database
-- database setup - x2 tables: project_room and elements
-    - project_room table (id, heading, description, image_gallery)
-    - elements table (id, item_name, make, description, element_tag, shop, colour)
+- database setup - x2 tables: project and elements
+    - project table (id, space, description, image_gallery)
+    - elements table (id, which_space, item_name, make, description, element_tag)
 - make seeds for each table
 - db functions (getAllProjectRooms, getAllElements, add projects, add elements)
 
@@ -33,9 +33,13 @@ This project will be built on React, Redux, Knex, and (possibly) Auth0.
 - simple actions: GET_PROJECTS, ADD_PROJECT
 - thunks: fetchAllProjects, addProject
 
+- elementActions 
+- simple actions: GET_ELEMENTS, ADD_ELEMENT
+- thunks: fetchAllElements, addElement
+
 #### apis
-- project.api (fetch, add, delete, update functions)
-- elements.api (fetch, add, delete, update functions)
+- project.api (fetch, add functions)
+- elements.api (fetch, add functions)
 
 #### components
 - Nav.tsx 
@@ -48,7 +52,7 @@ This project will be built on React, Redux, Knex, and (possibly) Auth0.
 
 ---
 ## Stretch
-
+- ability to upload images
 - Auth0 authentication to login
 - smooth page transition animations
 - delete projects in the db and redux
