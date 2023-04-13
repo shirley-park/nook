@@ -6,6 +6,10 @@ Renovating and refurnishing your home can be stressful process. Nook is there to
 
 ## Setup
 
+### Wellbeing plan
+
+Wellbeing.md
+
 ### 0. Cloning and installation
 - [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
   <details style="padding-left: 2em">
