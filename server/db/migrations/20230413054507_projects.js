@@ -7,7 +7,7 @@ exports.up = function (knex) {
     table.increments('id')
     table.string('space')
     table.string('description')
-    table.string('image_gallery')
+    table.specificType('imageArr', 'text[]')
   })
 }
 
