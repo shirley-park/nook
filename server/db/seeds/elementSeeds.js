@@ -76,11 +76,45 @@ exports.seed = async function (knex) {
       id: 7,
       space_id: 2,
       project_id: 2,
-      item_name: 'test',
-      make: 'test',
-      description: 'test',
-      imageUrl: 'test',
-      element_tag: 'test',
+      item_name: 'Rain shower head and mixer',
+      make: 'Plumbline',
+      description: 'Colour: brushed nickel, without the handheld thing',
+      imageUrl:
+        'https://i.pinimg.com/564x/22/9d/ea/229dea1671f415eab0998ec1b6cc9cba.jpg',
+      element_tag: 'plumbing',
+    },
+    {
+      id: 8,
+      space_id: 2,
+      project_id: 2,
+      item_name: 'Round mirror with backlight',
+      make: 'Metro glass',
+      description: 'without the handheld thing',
+      imageUrl:
+        'https://i.pinimg.com/736x/dc/da/05/dcda05f96711f0c63dd70d464e33bb74.jpg',
+      element_tag: 'fittings',
+    },
+    {
+      id: 9,
+      space_id: 3,
+      project_id: 3,
+      item_name: 'Kesi sofa',
+      make: 'Simon James',
+      description: 'Colour: Baru. Upholstered in Kvadrat wool',
+      imageUrl:
+        'https://i.pinimg.com/736x/04/f4/ee/04f4eeec5ea1bfbb139d84588395bce8.jpg',
+      element_tag: 'furniture',
+    },
+    {
+      id: 10,
+      space_id: 3,
+      project_id: 3,
+      item_name: 'Offset coffee table',
+      make: 'Phillippe Malouin',
+      description: 'Colour: natural oak.',
+      imageUrl:
+        'https://cdn.shopify.com/s/files/1/0012/2005/1002/products/OffsetCoffeeTable_Black.jpg?v=1656568143',
+      element_tag: 'furniture',
     },
   ])
 }

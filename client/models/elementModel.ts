@@ -5,5 +5,5 @@ export default interface elementModel {
   make: string
   description: string
   imageUrl: string
-  element_tag: string[]
+  element_tag: string
 }
