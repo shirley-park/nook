@@ -14,4 +14,14 @@ router.get('/', (req, res) => {
     .catch((err) => err.message)
 })
 
+router.get('/project/:id', (req, res) => {
+  const projectId = Number(req.params.id)
+
+  db.getProjectById(projectId)
+    .then((project) => {
+      res.json(project)
+    })
+    .catch((err) => err.message)
+})
+
 export default router
