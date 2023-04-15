@@ -11,3 +11,5 @@ export function fetchProjectsApi(): Promise<projectModel[]> {
     return res.body
   })
 }
+
+// export function fetchProjectByIdApi():
