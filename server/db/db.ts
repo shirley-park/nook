@@ -14,10 +14,10 @@ export function getAllProjects(db = connection): Promise<projectModel[]> {
 }
 
 export function getProjectById(
-  id: number,
+  projectid: number,
   db = connection
 ): Promise<projectModel> {
-  return db('projects').where('projects.id', id).first()
+  return db('projects').where('projects.id', projectid).first()
 }
 
 // ---- ELEMENTS
