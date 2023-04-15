@@ -11,4 +11,9 @@ server.use(express.static(path.join(__dirname, 'public')))
 // Routes
 server.use('/api/v1/nook', projectsRoute, elementsRoute)
 
+// Wildcard route
+server.get('*', (req, res) => {
+  res.sendFile(path.resolve('server/public/index.html'))
+})
+
 export default server

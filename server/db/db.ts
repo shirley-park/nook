@@ -13,6 +13,13 @@ export function getAllProjects(db = connection): Promise<projectModel[]> {
   return db('projects').select()
 }
 
+export function getProjectById(
+  id: number,
+  db = connection
+): Promise<projectModel> {
+  return db('projects').where('projects.id', id).first()
+}
+
 // ---- ELEMENTS
 
 export function getAllElements(db = connection): Promise<elementModel[]> {
