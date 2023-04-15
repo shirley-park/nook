@@ -1,4 +1,4 @@
-import Elements from './Elements'
+import Elements from './AllElements'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import projectModel from '../models/projectModel'
 
@@ -25,9 +25,10 @@ function ProjectPage() {
 
   console.log(allProjects)
   return (
-    // <h3>{project.space}</h3>
-    // <p>{project.description}</p>
     <>
+      {/* <h3>{project.space}</h3>
+      <p>{project.description}</p> */}
+
       <h3>Hello! This is the project page!</h3>
       <div>
         <Elements />

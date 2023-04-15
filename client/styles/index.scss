@@ -18,7 +18,7 @@ body {
 
 // text
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   font-weight: 300;
 }
 
@@ -47,11 +47,15 @@ nav {
   margin-left: 180px;
   margin-right: 180px;
 
-  p {
-    font-size: 1em;
-    border: 1px solid rgb(214, 196, 168);
-    border-radius: 30px;
-    padding: 10px 20px 10px 20px;
+    .navItems_right {
+      display: flex;
+      align-items: right;
+    }
+
+    .navlink {
+      margin-right: 10px;
+      font-size: 1em;
+      padding: 5px 0px 5px 20px;
     }
 }
 
@@ -71,14 +75,14 @@ nav {
   
   h3 {
     font-size: 1.25em;
-    padding-left: 10px;
-    padding-right: 10px;
+    // padding-left: 10px;
+    // padding-right: 10px;
   }
   
   p {
     font-size: 1em;
-    padding-left: 10px;
-    padding-right: 10px;
+    // padding-left: 10px;
+    // padding-right: 10px;
   }
 
   img {
@@ -90,4 +94,44 @@ nav {
 
 .projectCard:hover {
   opacity: 0.75;
+}
+
+// AllElements component
+
+.elementsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 50px;
+}
+
+.elementCard {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 600px;
+  img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    }
+
+  .elementFlexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .elementTag {
+    margin-left: 15px;
+    display: inline-flex;
+    padding: 2px 8px 2px 8px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    background-color: rgba(122, 194, 129, 0.187);
+    color: rgb(74, 74, 74);
+    
+  }
 }

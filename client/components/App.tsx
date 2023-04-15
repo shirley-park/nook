@@ -1,10 +1,10 @@
 // Imports
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Nav from './Nav'
 import Home from './Home'
-import ProjectPage from './Projectpage'
-import Elements from './Elements'
+import ProjectPage from './ProjectPage'
+import AllElements from './AllElements'
 
 // --------------------
 
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project/:id" element={<ProjectPage />} />
-            <Route path="/project/:id" element={<Elements />} />
+            <Route path="/elements" element={<AllElements />} />
           </Routes>
         </section>
       </div>
