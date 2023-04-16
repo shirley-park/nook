@@ -1,6 +1,7 @@
 export default interface elementModel {
   id: number
-  which_space: string
+  space_id: number
+  project_id: number
   item_name: string
   make: string
   description: string

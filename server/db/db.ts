@@ -10,15 +10,30 @@ const connection = knex(config[environment])
 // ----PROJECTS
 
 export function getAllProjects(db = connection): Promise<projectModel[]> {
-  return db('projects').select()
+  return db('projects').select().orderBy('id', 'desc')
 }
 
-export function getProjectById(
-  projectid: number,
+export function addNewProject(
+  newProject: projectModel,
   db = connection
 ): Promise<projectModel> {
-  return db('projects').where('projects.id', projectid).first()
+  return db('projects')
+    .insert(newProject)
+    .returning(['id', 'space', 'description', 'image'])
+    .then((newProjectObjArr) => newProjectObjArr[0])
 }
+
+// ---- SPACES
+
+// export function getElementsByProjectId(
+//   projectId: number,
+//   db = connection
+// ): Promise<elementModel[]> {
+//   return db('elements')
+//     .select()
+//     .where('projects_id', projectId)
+//     .join('spaces', 'projects_id', 'project_id')
+// }
 
 // ---- ELEMENTS
 

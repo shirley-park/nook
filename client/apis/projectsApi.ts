@@ -12,4 +12,13 @@ export function fetchProjectsApi(): Promise<projectModel[]> {
   })
 }
 
-// export function fetchProjectByIdApi():
+export function addNewProjectApi(
+  newProject: projectModel
+): Promise<projectModel> {
+  return request
+    .post(url)
+    .send(newProject)
+    .then((res) => {
+      return res.body
+    })
+}

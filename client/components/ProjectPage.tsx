@@ -1,36 +1,43 @@
-import Elements from './Elements'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
+// import Elements from './AllElements'
+import { useAppSelector } from '../hooks/redux'
 import projectModel from '../models/projectModel'
 
 import { useParams } from 'react-router-dom'
 
-import { useEffect } from 'react'
-import { fetchAllProjectsThunk } from '../actions/projectsActions'
+import FilteredElements from './FilteredElements'
 
 // --------------------
 
 function ProjectPage() {
-  const { projectId } = useParams()
-  console.log({ projectId })
+  const params = useParams()
+  // {id: 1}
 
-  const dispatch = useAppDispatch()
+  const projectId = Number(params.id)
 
-  useEffect(() => {
-    dispatch(fetchAllProjectsThunk())
-  }, [dispatch])
-
-  const allProjects = useAppSelector(
+  const projectsState = useAppSelector(
     (state) => state.projectsState as projectModel[]
   )
 
-  console.log(allProjects)
+  const filteredProj = projectsState.filter(
+    (project) => project.id === projectId
+  )
+
+  const theProject = filteredProj[0]
+
+  console.log(theProject)
+
   return (
-    // <h3>{project.space}</h3>
-    // <p>{project.description}</p>
     <>
-      <h3>Hello! This is the project page!</h3>
+      <h3>{theProject.space}</h3>
+      <p>{theProject.description}</p>
+      <div className="projectInspGrid">
+        <img src={theProject.image} alt={theProject.description} />
+        {/* <img src={theProject.image} alt={theProject.description} /> */}
+      </div>
+
+      <hr />
       <div>
-        <Elements />
+        <FilteredElements />
       </div>
     </>
   )

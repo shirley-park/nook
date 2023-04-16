@@ -18,7 +18,7 @@ body {
 
 // text
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   font-weight: 300;
 }
 
@@ -47,11 +47,15 @@ nav {
   margin-left: 180px;
   margin-right: 180px;
 
-  p {
-    font-size: 1em;
-    border: 1px solid rgb(214, 196, 168);
-    border-radius: 30px;
-    padding: 10px 20px 10px 20px;
+    .navItems_right {
+      display: flex;
+      align-items: right;
+    }
+
+    .navlink {
+      margin-right: 10px;
+      font-size: 1em;
+      padding: 5px 0px 5px 20px;
     }
 }
 
@@ -71,14 +75,14 @@ nav {
   
   h3 {
     font-size: 1.25em;
-    padding-left: 10px;
-    padding-right: 10px;
+    // padding-left: 10px;
+    // padding-right: 10px;
   }
   
   p {
     font-size: 1em;
-    padding-left: 10px;
-    padding-right: 10px;
+    // padding-left: 10px;
+    // padding-right: 10px;
   }
 
   img {
@@ -91,3 +95,138 @@ nav {
 .projectCard:hover {
   opacity: 0.75;
 }
+
+// Add project form
+
+.addProjectform {
+
+  .addFormField {
+    margin-top: 15px;
+
+    label {
+      font-weight: 400;
+    }
+
+  }
+
+  input, textarea {
+    width: 80%;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.419);
+    border-radius: 7px;
+    font-family: 'Jost', sans-serif;
+
+  }
+} 
+
+
+.addProjButton {
+  background-color: rgba(195, 195, 195, 0.421);
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+// ProjectPage
+
+.projectInspGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 50px;
+}
+
+img {
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  }
+
+// AllElements component
+
+.elementsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 50px;
+}
+
+.elementCard {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 600px;
+  img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    }
+
+  .elementFlexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .elementTag {
+    margin-left: 15px;
+    display: inline-flex;
+    padding: 2px 8px 2px 8px;
+    font-weight: 400;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    background-color: rgba(227, 186, 90, 0.187);
+    color: rgb(147, 147, 147);
+    
+  }
+}
+
+// TESTING!
+.overlay__background {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.overlay__container {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 10;
+  padding: 60px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.overlay__controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.overlay__close:after {
+  display: inline-block;
+  content: "\00d7";
+}
+
+.overlay__close {
+  border: none;
+  background-color: transparent;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+// TESTING!

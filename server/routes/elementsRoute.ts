@@ -6,7 +6,7 @@ router.use(express.json())
 
 // --------------------
 
-router.get('/', (req, res) => {
+router.get('/elements', (req, res) => {
   db.getAllElements()
     .then((elements) => {
       res.json(elements)
