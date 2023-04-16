@@ -2,8 +2,6 @@
 
 So, it’s the final project. How might I manage my wellbeing during the next week and a bit?
 
-## --
-
 ### How are we feeling?
 
 - I’m feeling good but very conscious of the need to keep my motivation levels up for this larger project.
