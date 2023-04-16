@@ -14,7 +14,7 @@ function App() {
       <header className="header">
         <Nav />
       </header>
-      <div className="container">
+      <div className="container loader">
         <section className="main">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -96,6 +96,21 @@ nav {
   opacity: 0.75;
 }
 
+// ProjectPage
+
+.projectInspGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 50px;
+}
+
+img {
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  }
+
 // AllElements component
 
 .elementsGrid {
