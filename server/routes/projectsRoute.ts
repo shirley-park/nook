@@ -15,6 +15,15 @@ router.get('/', (req, res) => {
     .catch((err) => err.message)
 })
 
+router.post('/', (req, res) => {
+  const newProject = req.body
+  db.addNewProject(newProject)
+    .then((newProjectObj) => {
+      res.json(newProjectObj)
+    })
+    .catch((err) => err.message)
+})
+
 // router.get('/project/:id', (req, res) => {
 //   const projectId = Number(req.params.id)
 
@@ -25,14 +34,14 @@ router.get('/', (req, res) => {
 //     .catch((err) => err.message)
 // })
 
-router.get('/project/:id', (req, res) => {
-  const projectId = Number(req.params.id)
+// router.get('/project/:id', (req, res) => {
+//   const projectId = Number(req.params.id)
 
-  db.getElementsByProjectId(projectId)
-    .then((elements) => {
-      return res.json(elements)
-    })
-    .catch((err) => err.message)
-})
+//   db.getElementsByProjectId(projectId)
+//     .then((elements) => {
+//       return res.json(elements)
+//     })
+//     .catch((err) => err.message)
+// })
 
 export default router

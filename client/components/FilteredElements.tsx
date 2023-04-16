@@ -11,6 +11,13 @@ import elementModel from '../models/elementModel'
 
 import { useParams } from 'react-router-dom'
 
+// delete button style
+// import IconButton from '@mui/material/IconButton'
+// import DeleteIcon from '@mui/icons-material/Delete'
+// // edit icon
+// import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
+// import { Icon } from '@mui/material'
+
 // --------------------
 
 function FilteredElements() {

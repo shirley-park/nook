@@ -99,21 +99,34 @@ nav {
 // Add project form
 
 .addProjectform {
+
   .addFormField {
     margin-top: 15px;
+
+    label {
+      font-weight: 400;
+    }
+
   }
 
-  input {
-    padding: 8px;
-    border: 1px solid grey;
+  input, textarea {
+    width: 80%;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.419);
     border-radius: 7px;
-  }
-}
+    font-family: 'Jost', sans-serif;
 
-.addProj {
+  }
+} 
+
+
+.addProjButton {
+  background-color: rgba(195, 195, 195, 0.421);
+  border: none;
+  border-radius: 15px;
   padding: 15px;
   font-family: 'Jost', sans-serif;
-
+  font-weight: 400;
 }
 
 // ProjectPage
@@ -174,7 +187,7 @@ img {
 
 // TESTING!
 .overlay__background {
-  background-color: rgba(0, 0, 0, 0.406);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -193,7 +206,7 @@ img {
   left: 0;
   margin: auto;
   z-index: 10;
-  padding: 50px;
+  padding: 60px;
   width: fit-content;
   height: fit-content;
 }

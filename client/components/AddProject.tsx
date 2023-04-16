@@ -1,35 +1,80 @@
-import { FormEvent } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
+
+import projectModel from '../models/projectModel'
+import { useAppDispatch } from '../hooks/redux'
+import { addNewProjectThunk } from '../actions/projectsActions'
+
+// --------------------
 
 function AddProject() {
+  const dispatch = useAppDispatch()
+
+  const [newProject, setNewProject] = useState({} as projectModel)
+
+  const changeHandler = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setNewProject({
+      ...newProject,
+      [e.target.id]: e.target.value,
+    })
+  }
+
   const handleAdd = (e: FormEvent) => {
-    console.log(e, 'we will sort this out')
+    e.preventDefault()
+    console.log(newProject)
+    dispatch(addNewProjectThunk(newProject))
+    // REDIRECT TO HOME
   }
 
   return (
     <>
       <form onSubmit={handleAdd} className="addProjectform">
         <div className="addFormField">
-          <label htmlFor="space_name">Which space are you working on?</label>
+          <label htmlFor="space">Which space are you working on?</label>
           <br />
-          <input id="space_name" type="text" required />
+          <input
+            onChange={changeHandler}
+            id="space"
+            value={newProject.space || ''}
+            type="text"
+            required
+          />
         </div>
         <div className="addFormField">
-          <label htmlFor="vibes">What vibes are you going for?</label>
+          <label htmlFor="description">What vibes are you going for?</label>
           <br />
-          <input id="vibes" type="text" required />
+          {/* <input id="vibes" type="textarea" required /> */}
+          <textarea
+            onChange={changeHandler}
+            id="description"
+            value={newProject.description || ''}
+            rows={3}
+            required
+          />
         </div>
         <div className="addFormField">
-          <label htmlFor="image">image</label>
+          <label htmlFor="image">image url</label>
           <br />
-          <input id="image" type="text" />
+          <input
+            onChange={changeHandler}
+            id="image"
+            value={newProject.image || ''}
+            type="text"
+          />
           <br />
-          or
+          {/* or
           <br />
-          <input id="image" type="file" />
+          <input
+            onChange={changeHandler}
+            id="image"
+            type="file"
+            className="fileUpload"
+          /> */}
         </div>
         <br />
-        <button type="submit" className="addProj">
-          Add your project
+        <button type="submit" className="addProjButton">
+          Add project
         </button>
       </form>
     </>

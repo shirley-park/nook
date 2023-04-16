@@ -1,4 +1,8 @@
-import { Action, RECEIVE_PROJECTS } from '../actions/projectsActions'
+import {
+  Action,
+  RECEIVE_PROJECTS,
+  ADD_PROJECT,
+} from '../actions/projectsActions'
 
 import projectModel from '../models/projectModel'
 
@@ -15,6 +19,9 @@ function projectsReducer(
   switch (type) {
     case RECEIVE_PROJECTS:
       return payload
+    case ADD_PROJECT:
+      console.log(payload)
+      return [payload, ...state]
     default:
       return state
   }
