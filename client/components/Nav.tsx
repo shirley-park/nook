@@ -17,7 +17,7 @@ function Nav() {
           <Link to="/elements" className="elements link">
             <p className="navlink">my elements</p>
           </Link>
-          <Link to="#" className="addProjectNav link">
+          <Link to="/addProject" className="addProjectNav link">
             <p className="navlink">add project</p>
           </Link>
         </div>

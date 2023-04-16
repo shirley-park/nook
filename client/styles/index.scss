@@ -96,6 +96,26 @@ nav {
   opacity: 0.75;
 }
 
+// Add project form
+
+.addProjectform {
+  .addFormField {
+    margin-top: 15px;
+  }
+
+  input {
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 7px;
+  }
+}
+
+.addProj {
+  padding: 15px;
+  font-family: 'Jost', sans-serif;
+
+}
+
 // ProjectPage
 
 .projectInspGrid {
@@ -142,11 +162,58 @@ img {
     margin-left: 15px;
     display: inline-flex;
     padding: 2px 8px 2px 8px;
+    font-weight: 400;
     font-size: 13px;
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 20px;
-    background-color: rgba(122, 194, 129, 0.187);
-    color: rgb(74, 74, 74);
+    background-color: rgba(227, 186, 90, 0.187);
+    color: rgb(147, 147, 147);
     
   }
 }
+
+// TESTING!
+.overlay__background {
+  background-color: rgba(0, 0, 0, 0.406);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.overlay__container {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 10;
+  padding: 50px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.overlay__controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.overlay__close:after {
+  display: inline-block;
+  content: "\00d7";
+}
+
+.overlay__close {
+  border: none;
+  background-color: transparent;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+// TESTING!
