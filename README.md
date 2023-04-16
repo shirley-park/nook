@@ -1,4 +1,4 @@
-# This is nook
+# This is nook :house_with_garden:
 
 Nook is the result of my growing appreciation for architectural design and interiors, general musings about the spaces we live in, and the ongoing quest to create a calm and considered living space.
 
