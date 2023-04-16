@@ -6,7 +6,7 @@ Renovating and refurnishing your home can be stressful process. Nook is there to
 
 ### Here's the plan
 
-:woman technologist: light skin tone: ,[Tech documentation](./documentation/Tech.md)
+:female-technologist::skin-tone-2: [Tech documentation](./documentation/Tech.md)
 
 :memo: The [kanban](https://polydactyl-cabinet-004.notion.site/Kanban-fb51965042f54820adab152606843714) on Notion
 
