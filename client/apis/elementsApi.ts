@@ -11,3 +11,14 @@ export function fetchElementsApi(): Promise<elementModel[]> {
     return res.body
   })
 }
+
+export function addNewElementApi(
+  newElement: elementModel
+): Promise<elementModel> {
+  return request
+    .post(url)
+    .send(newElement)
+    .then((res) => {
+      return res.body
+    })
+}

@@ -23,6 +23,29 @@ export function addNewProject(
     .then((newProjectObjArr) => newProjectObjArr[0])
 }
 
+// export function addNewProject(
+//   newProject: projectModel,
+//   db = connection
+// ): Promise<projectModel> {
+//   return knex
+//     .transaction(function (t) {
+//       return db('projects')
+//         .transacting(t)
+//         .insert(newProject)
+//         .then(function (response) {
+//           return db('spaces').transacting(t).insert({})
+//         })
+//         .then(t.commit)
+//         .catch(t.rollback)
+//     })
+//     .then(function () {
+//       // transaction suceeded, data written
+//     })
+//     .catch(function () {
+//       // transaction failed, data rolled back
+//     })
+// }
+
 // ---- SPACES
 
 // export function getElementsByProjectId(
@@ -39,4 +62,23 @@ export function addNewProject(
 
 export function getAllElements(db = connection): Promise<elementModel[]> {
   return db('elements').select()
+}
+
+export function addNewElementDb(
+  newElement: elementModel,
+  projectId: number,
+  db = connection
+): Promise<elementModel> {
+  return db('elements')
+    .insert(newElement)
+    .returning([
+      'id',
+      'project_id',
+      'item_name',
+      'make',
+      'description',
+      'imageUrl',
+      'element_tag',
+    ])
+    .then((newElementObjArr) => newElementObjArr[0])
 }

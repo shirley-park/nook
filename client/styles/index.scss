@@ -52,10 +52,15 @@ nav {
       align-items: right;
     }
 
-    .navlink {
+    .navbutton {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: rgb(126, 126, 126);
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
       margin-right: 10px;
       font-size: 1em;
-      padding: 5px 0px 5px 20px;
+      padding: 5px 10px 5px 10px;
     }
 }
 
