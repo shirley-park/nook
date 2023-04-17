@@ -2,6 +2,7 @@ import {
   Action,
   RECEIVE_ELEMENTS,
   ADD_ELEMENT,
+  DELETE_ELEMENT,
 } from '../actions/elementsActions'
 
 import elementModel from '../models/elementModel'
@@ -21,6 +22,10 @@ function elementsReducer(
       return payload
     case ADD_ELEMENT:
       return [payload, ...state]
+    case DELETE_ELEMENT:
+      return state.filter((element) => {
+        return element.id !== payload
+      })
     default:
       return state
   }

@@ -1,6 +1,7 @@
 import request from 'superagent'
 
 import elementModel from '../models/elementModel'
+// import projectModel from '../models/projectModel'
 
 // --------------------
 
@@ -13,12 +14,24 @@ export function fetchElementsApi(): Promise<elementModel[]> {
 }
 
 export function addNewElementApi(
-  newElement: elementModel
+  newElement: elementModel,
+  id: number
 ): Promise<elementModel> {
   return request
-    .post(url)
+    .post('/api/v1/nook/' + id)
     .send(newElement)
     .then((res) => {
       return res.body
     })
+}
+
+export function deleteElementApi(id: elementModel['id']) {
+  return request.delete('/api/v1/nook/' + id).then((res) => res.body)
+}
+
+export function updateItemApi(id: number, updatedElement: elementModel) {
+  return request
+    .patch('/api/v1/nook/' + id)
+    .send(updatedElement)
+    .then((res) => res.body)
 }

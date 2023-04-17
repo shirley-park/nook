@@ -1,27 +1,21 @@
 // Imports
 
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { useEffect } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 // import fetchAllThunk from elements.actions
-import { fetchAllElementsThunk } from '../actions/elementsActions'
+import {
+  addNewElementThunk,
+  fetchAllElementsThunk,
+} from '../actions/elementsActions'
 
 // element model
 import elementModel from '../models/elementModel'
 
 import { useParams } from 'react-router-dom'
 
-// delete button style
-// import IconButton from '@mui/material/IconButton'
-// import DeleteIcon from '@mui/icons-material/Delete'
-// // edit icon
-// import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
-// import { Icon } from '@mui/material'
-
-import * as React from 'react'
-import Box from '@mui/material/Box'
-import Fab from '@mui/material/Fab'
-import AddIcon from '@mui/icons-material/Add'
+import ElementCard from './ElementCard'
+import { addNewElementApi } from '../apis/elementsApi'
 
 // --------------------
 
@@ -42,34 +36,113 @@ function FilteredElements() {
 
   const filteredList = allElements.filter((el) => el.project_id === projectId)
 
+  //  Add element form ----
+
+  const [formVisible, toggleVisibility] = useState(false)
+
+  const toggleVisible = () => {
+    toggleVisibility(!formVisible)
+    console.log(formVisible)
+  }
+
+  const [newElement, setNewElement] = useState({} as elementModel)
+
+  useEffect(() => {}, [newElement])
+
+  const changeHandler = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    console.log(e.target.value)
+    setNewElement({
+      ...newElement,
+      [e.target.id]: e.target.value,
+    })
+  }
+
+  const handleAddElement = (e: FormEvent) => {
+    e.preventDefault()
+    console.log(newElement)
+    dispatch(addNewElementThunk(newElement, projectId))
+  }
+
+  //  Add element form ----
+
   return (
     <>
       <h3>Elements</h3>
 
-      <Box sx={{ '& > :not(style)': { m: 1 } }}>
-        <Fab size="small" color="secondary" aria-label="add">
-          <AddIcon />
-        </Fab>
-        {/* <Fab size="medium" color="secondary" aria-label="add">
-          <AddIcon />
-        </Fab>
-        <Fab color="secondary" aria-label="add">
-          <AddIcon />
-        </Fab> */}
-      </Box>
+      <button className="invisibleButton" onClick={toggleVisible}>
+        <span className="material-symbols-outlined">add_circle</span>
+      </button>
+
+      {/* toggle add Element form */}
+      {formVisible && (
+        <form onSubmit={handleAddElement} className="addElementform">
+          <div className="addFormField">
+            <label htmlFor="item_name">Element item</label>
+            <br />
+            <input
+              onChange={changeHandler}
+              id="item_name"
+              value={newElement.item_name || ''}
+              type="text"
+              required
+            />
+          </div>
+          <div className="addFormField">
+            <label htmlFor="make">Brand/manufacturer:</label>
+            <br />
+            <input
+              onChange={changeHandler}
+              id="make"
+              value={newElement.make || ''}
+              type="text"
+              required
+            />
+          </div>
+          <div className="addFormField">
+            <label htmlFor="description">Description, colour, etc.</label>
+            <br />
+            <textarea
+              onChange={changeHandler}
+              id="description"
+              value={newElement.description || ''}
+              rows={3}
+              required
+            />
+          </div>
+          <div className="addFormField">
+            <label htmlFor="imageUrl">image url</label>
+            <br />
+            <input
+              onChange={changeHandler}
+              id="imageUrl"
+              value={newElement.imageUrl || ''}
+              type="text"
+            />
+            <br />
+            <div className="addFormField">
+              <label htmlFor="element_tag">item tag</label>
+              <br />
+              <input
+                onChange={changeHandler}
+                id="element_tag"
+                value={newElement.element_tag || ''}
+                type="text"
+                required
+              />
+            </div>
+          </div>
+          <br />
+          <button type="submit" className="addProjButton">
+            Add element
+          </button>
+        </form>
+      )}
 
       <section className="elementsGrid">
         {filteredList.map((element) => (
-          <div key={element.id} className="elementCard">
-            <div className="elementFlexContainer">
-              <h3>{element.item_name}</h3>
-              <p className="elementTag">{element.element_tag}</p>
-            </div>
-            <h4>{element.make}</h4>
-            <hr />
-            <img src={element.imageUrl} alt={element.item_name} />
-            <p>{element.description}</p>
-          </div>
+          <ElementCard key={element.id} element={element} />
         ))}
       </section>
     </>

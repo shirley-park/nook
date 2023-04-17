@@ -82,3 +82,15 @@ export function addNewElementDb(
     ])
     .then((newElementObjArr) => newElementObjArr[0])
 }
+
+export function deleteElementDb(elementId: number, db = connection) {
+  return db('elements').where('id', elementId).delete()
+}
+
+export function updateElementDb(
+  elementId: number,
+  updatedElement: elementModel,
+  db = connection
+) {
+  return db('elements').where('id', elementId).update(updatedElement)
+}

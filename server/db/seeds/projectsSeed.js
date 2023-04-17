@@ -12,7 +12,7 @@ exports.seed = async function (knex) {
       description:
         'Going for a modern and functional kitchen with lots of bench space and good task lighting',
       image:
-        'https://i.pinimg.com/564x/72/4a/f4/724af40b53c3db1fbc1d591f27ad60e5.jpg',
+        'https://i.pinimg.com/564x/79/24/31/79243126ed80938a6cf08b4d3cb3fef1.jpg',
     },
     {
       id: 2,

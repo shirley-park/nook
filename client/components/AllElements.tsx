@@ -9,6 +9,7 @@ import { fetchAllElementsThunk } from '../actions/elementsActions'
 // element model
 import elementModel from '../models/elementModel'
 
+import ElementCard from './ElementCard'
 // --------------------
 
 function AllElements() {
@@ -28,16 +29,7 @@ function AllElements() {
       <h3>All Elements</h3>
       <section className="elementsGrid">
         {allElements.map((element) => (
-          <div key={element.id} className="elementCard">
-            <div className="elementFlexContainer">
-              <h3>{element.item_name}</h3>
-              <p className="elementTag">{element.element_tag}</p>
-            </div>
-            <h4>{element.make}</h4>
-            <hr />
-            <img src={element.imageUrl} alt={element.item_name} />
-            <p>{element.description}</p>
-          </div>
+          <ElementCard key={element.id} element={element} />
         ))}
       </section>
     </>

@@ -59,9 +59,18 @@ nav {
       background-color: rgba(255, 255, 255, 0);
       border: none;
       margin-right: 10px;
-      font-size: 1em;
+      font-size: 1.15em;
       padding: 5px 10px 5px 10px;
     }
+
+    .navbutton:hover {
+      background-color: rgba(216, 216, 216, 0.198);
+      border-radius: 20px;
+    }
+}
+
+button {
+  cursor: pointer;
 }
 
 // Home component all projects
@@ -124,7 +133,6 @@ nav {
   }
 } 
 
-
 .addProjButton {
   background-color: rgba(195, 195, 195, 0.421);
   border: none;
@@ -141,6 +149,7 @@ nav {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5em;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 img {
@@ -188,9 +197,37 @@ img {
     color: rgb(147, 147, 147);
     
   }
+
+  .h4AndSymbolsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+      .editDeleteIcons {
+        display: flex;
+        align-items: right;
+        
+         .material-symbols-outlined {
+          padding: 5px;
+          margin-left: 15px;
+        }
+
+        .material-symbols-outlined:hover {
+          margin-left: 15px;
+          border: 1px;
+          border-radius: 50%;
+          padding: 5px;
+          background-color: rgba(216, 216, 216, 0.198);
+        }
+      }
+    
+  }
 }
 
-// TESTING!
+// Add project overlay
+
 .overlay__background {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
@@ -204,6 +241,7 @@ img {
 
 .overlay__container {
   background-color: rgb(255, 255, 255);
+  border-radius: 20px;
   position: fixed;
   top: 0;
   right: 0;
@@ -234,4 +272,51 @@ img {
   cursor: pointer;
 }
 
-// TESTING!
+// Filtered Elements component
+
+.addElementButton {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+
+  span {
+    color: rgb(126, 126, 126);
+  }
+}
+
+// add element form
+.addElementform {
+
+  .addFormField {
+    margin-top: 15px;
+
+    label {
+      font-weight: 400;
+    }
+
+  }
+
+  input, textarea {
+    width: 50vw;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.419);
+    border-radius: 7px;
+    font-family: 'Jost', sans-serif;
+
+  }
+} 
+
+.addProjButton {
+  background-color: rgba(216, 216, 216, 0.198);
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.invisibleButton {
+  background-color: rgba(255, 255, 255, 0.421);
+  border: none;
+  border-radius: 15px;
+}
+

@@ -1,13 +1,11 @@
 // Imports
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 
 import Nav from './Nav'
 import Home from './Home'
 import ProjectPage from './ProjectPage'
 import AllElements from './AllElements'
 import AddProject from './AddProject'
-// import Overlay from './Overlay'
 
 // --------------------
 
