@@ -8,7 +8,7 @@ exports.seed = async function (knex) {
   await knex('elements').insert([
     {
       id: 1,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'Eos gooseneck tap',
       make: 'Franke',
@@ -19,7 +19,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 2,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'Benchtops and splashback',
       make: 'Caesarstone',
@@ -30,7 +30,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 3,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'Cabinets from Woodgrain Collection',
       make: 'Laminex',
@@ -41,7 +41,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 4,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'Dual bowl sink',
       make: 'Franke',
@@ -52,7 +52,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 5,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'LED strip lighting',
       make: 'Halcyon Lighting',
@@ -63,7 +63,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 6,
-      space_id: 1,
+      // space_id: 1,
       project_id: 1,
       item_name: 'Slimline pendant',
       make: 'Marset, ECC',
@@ -74,7 +74,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 7,
-      space_id: 2,
+      // space_id: 2,
       project_id: 2,
       item_name: 'Rain shower head and mixer',
       make: 'Plumbline',
@@ -85,7 +85,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 8,
-      space_id: 2,
+      // space_id: 2,
       project_id: 2,
       item_name: 'Round mirror with backlight',
       make: 'Metro glass',
@@ -96,7 +96,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 9,
-      space_id: 3,
+      // space_id: 3,
       project_id: 3,
       item_name: 'Kesi sofa',
       make: 'Simon James',
@@ -107,7 +107,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 10,
-      space_id: 3,
+      // space_id: 3,
       project_id: 3,
       item_name: 'Offset coffee table',
       make: 'Phillippe Malouin',

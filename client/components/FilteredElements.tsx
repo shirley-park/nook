@@ -18,6 +18,11 @@ import { useParams } from 'react-router-dom'
 // import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
 // import { Icon } from '@mui/material'
 
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Fab from '@mui/material/Fab'
+import AddIcon from '@mui/icons-material/Add'
+
 // --------------------
 
 function FilteredElements() {
@@ -39,7 +44,19 @@ function FilteredElements() {
 
   return (
     <>
-      <h3>these are the Filtered elements</h3>
+      <h3>Elements</h3>
+
+      <Box sx={{ '& > :not(style)': { m: 1 } }}>
+        <Fab size="small" color="secondary" aria-label="add">
+          <AddIcon />
+        </Fab>
+        {/* <Fab size="medium" color="secondary" aria-label="add">
+          <AddIcon />
+        </Fab>
+        <Fab color="secondary" aria-label="add">
+          <AddIcon />
+        </Fab> */}
+      </Box>
 
       <section className="elementsGrid">
         {filteredList.map((element) => (

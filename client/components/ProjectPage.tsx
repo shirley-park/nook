@@ -28,11 +28,10 @@ function ProjectPage() {
 
   return (
     <>
-      <h3>{theProject.space}</h3>
-      <p>{theProject.description}</p>
+      <h3>{theProject?.space}</h3>
+      <p>{theProject?.description}</p>
       <div className="projectInspGrid">
-        <img src={theProject.image} alt={theProject.description} />
-        {/* <img src={theProject.image} alt={theProject.description} /> */}
+        <img src={theProject?.image} alt={theProject?.description} />
       </div>
 
       <hr />

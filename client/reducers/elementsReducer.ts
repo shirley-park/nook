@@ -1,4 +1,8 @@
-import { Action, RECEIVE_ELEMENTS } from '../actions/elementsActions'
+import {
+  Action,
+  RECEIVE_ELEMENTS,
+  ADD_ELEMENT,
+} from '../actions/elementsActions'
 
 import elementModel from '../models/elementModel'
 
@@ -15,6 +19,8 @@ function elementsReducer(
   switch (type) {
     case RECEIVE_ELEMENTS:
       return payload
+    case ADD_ELEMENT:
+      return [payload, ...state]
     default:
       return state
   }

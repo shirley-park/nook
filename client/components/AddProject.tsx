@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import projectModel from '../models/projectModel'
 import { useAppDispatch } from '../hooks/redux'
 import { addNewProjectThunk } from '../actions/projectsActions'
+import { useNavigate } from 'react-router-dom'
 
 // --------------------
 
@@ -20,11 +21,14 @@ function AddProject() {
     })
   }
 
+  const navigate = useNavigate()
+
   const handleAdd = (e: FormEvent) => {
     e.preventDefault()
     console.log(newProject)
     dispatch(addNewProjectThunk(newProject))
     // REDIRECT TO HOME
+    navigate('/')
   }
 
   return (

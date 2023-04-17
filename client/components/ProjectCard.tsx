@@ -13,6 +13,7 @@ function ProjectCard({ project }: { project: projectModel }) {
         <h3>{project.space}</h3>
         <p>{project.description}</p>
       </Link>
+      <hr />
     </div>
   )
 }
