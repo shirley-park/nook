@@ -14,7 +14,7 @@ router.get('/elements', (req, res) => {
     .catch((err) => err.message)
 })
 
-router.post('/elements/:id', (req, res) => {
+router.post('/:id', (req, res) => {
   const { id, item_name, make, description, imageUrl, element_tag } = req.body
 
   const projectId = Number(req.params.id)
@@ -33,6 +33,23 @@ router.post('/elements/:id', (req, res) => {
     .then((newElement) => {
       res.json(newElement)
     })
+    .catch((err) => err.message)
+})
+
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteElementDb(id)
+    .then(() => res.status(200).send('deleted!'))
+    .catch((err) => err.message)
+})
+
+router.patch('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  const amendments = req.body
+
+  console.log(amendments)
+  db.updateElementDb(id, amendments)
+    .then((updatedElement) => res.json(updatedElement))
     .catch((err) => err.message)
 })
 
