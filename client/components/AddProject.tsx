@@ -58,13 +58,14 @@ function AddProject() {
           />
         </div>
         <div className="addFormField">
-          <label htmlFor="image">image url</label>
+          <label htmlFor="image">
+            image URL - separate multiple URLs by commas
+          </label>
           <br />
-          <input
+          <textarea
             onChange={changeHandler}
             id="image"
             value={newProject.image || ''}
-            type="text"
           />
           <br />
           {/* or
