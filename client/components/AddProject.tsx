@@ -4,10 +4,11 @@ import projectModel from '../models/projectModel'
 import { useAppDispatch } from '../hooks/redux'
 import { addNewProjectThunk } from '../actions/projectsActions'
 import { useNavigate } from 'react-router-dom'
+import overlayModel from '../models/overlayModel'
 
 // --------------------
 
-function AddProject() {
+function AddProject({ onClose }: overlayModel) {
   const dispatch = useAppDispatch()
 
   const [newProject, setNewProject] = useState({} as projectModel)
@@ -27,8 +28,9 @@ function AddProject() {
     e.preventDefault()
     console.log(newProject)
     dispatch(addNewProjectThunk(newProject))
+    onClose()
     // REDIRECT TO HOME
-    navigate('/')
+    // navigate('/')
   }
 
   return (
