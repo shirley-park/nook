@@ -27,7 +27,6 @@ function FilteredElements() {
 
   const params = useParams()
   const projectId = Number(params.id)
-  console.log(projectId)
 
   const allElements = useAppSelector(
     (state) => state.elementsState as elementModel[]

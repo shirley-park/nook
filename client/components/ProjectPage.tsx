@@ -33,13 +33,18 @@ function ProjectPage() {
 
   console.log(state)
 
+  const projectImageArr = state.project.image.split(',')
+  console.log(projectImageArr)
+
   return (
     <>
       {/* Shrena Added */}
       <h3>{state.project.space}</h3>
       <p>{state.project.description}</p>
       <div className="projectInspGrid">
-        <img src={state.project.image} alt={state.project.description} />
+        {projectImageArr.map((imageUrl: string, i: number) => (
+          <img src={imageUrl} alt={state.project.space} key={i} />
+        ))}
       </div>
       {/* Shrena Added */}
 
