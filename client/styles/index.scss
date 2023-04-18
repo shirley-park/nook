@@ -350,3 +350,30 @@ footer {
     font-size: 15px;
   }
 }
+
+//  Media queries
+
+@media screen and (max-width: 767px) {
+  
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+  .projectsGrid {
+  display: grid;
+  grid-template-columns: 100%;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px){
+  
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+
+}
