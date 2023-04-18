@@ -80,7 +80,7 @@ exports.seed = async function (knex) {
       make: 'Plumbline',
       description: 'Colour: brushed nickel, without the handheld thing',
       imageUrl:
-        'https://i.pinimg.com/564x/22/9d/ea/229dea1671f415eab0998ec1b6cc9cba.jpg',
+        'https://i.pinimg.com/564x/6d/22/47/6d22470fead51416bba7044ef2bfc989.jpg',
       element_tag: 'plumbing',
     },
     {

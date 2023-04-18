@@ -29,7 +29,7 @@ export function deleteElementApi(id: elementModel['id']) {
   return request.delete('/api/v1/nook/' + id).then((res) => res.body)
 }
 
-export function updateItemApi(id: number, updatedElement: elementModel) {
+export function updateElementApi(id: number, updatedElement: elementModel) {
   return request
     .patch('/api/v1/nook/' + id)
     .send(updatedElement)

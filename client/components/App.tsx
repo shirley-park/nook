@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Nav from './Nav'
+import Footer from './Footer'
 import Home from './Home'
 import ProjectPage from './ProjectPage'
 import AllElements from './AllElements'
@@ -25,6 +26,7 @@ function App() {
           </Routes>
         </section>
       </div>
+      <Footer />
     </>
   )
 }

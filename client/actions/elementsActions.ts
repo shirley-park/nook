@@ -1,11 +1,16 @@
 import type { ThunkAction } from '../store'
 
 // import api function
-import { deleteElementApi, fetchElementsApi } from '../apis/elementsApi'
+import {
+  fetchElementsApi,
+  deleteElementApi,
+  updateElementApi,
+} from '../apis/elementsApi'
 import { addNewElementApi } from '../apis/elementsApi'
 
 // import elementModel
 import elementModel from '../models/elementModel'
+// import { ElementType } from 'react'
 // import projectModel from '../models/projectModel'
 
 // --------------------
@@ -13,11 +18,13 @@ import elementModel from '../models/elementModel'
 export const RECEIVE_ELEMENTS = 'RECEIVE_ELEMENTS'
 export const ADD_ELEMENT = 'ADD_ELEMENT'
 export const DELETE_ELEMENT = 'DELETE_ELEMENT'
+export const UPDATE_ELEMENT = 'UPDATE_ELEMENT'
 
 export type Action =
   | { type: 'RECEIVE_ELEMENTS'; payload: elementModel[] }
   | { type: 'ADD_ELEMENT'; payload: elementModel }
   | { type: 'DELETE_ELEMENT'; payload: number }
+  | { type: 'UPDATE_ELEMENT'; payload: elementModel }
 
 // SIMPLE ACTIONS
 
@@ -39,6 +46,13 @@ function deleteElementAction(id: elementModel['id']): Action {
   return {
     type: 'DELETE_ELEMENT',
     payload: id,
+  }
+}
+
+function updateElementAction(amendedElement: elementModel) {
+  return {
+    type: 'UPDATE_ELEMENT',
+    payload: amendedElement,
   }
 }
 
@@ -83,5 +97,26 @@ export function deleteElementThunk(id: elementModel['id']): ThunkAction {
           err.message
         })
     )
+  }
+}
+
+// UPDATE Item Thunk
+export function updateElementThunk(
+  id: number,
+  amendedElement: elementModel
+): ThunkAction {
+  return (dispatch) => {
+    console.log(amendedElement)
+    // dispatch the updateItem action
+    dispatch(updateElementAction(amendedElement))
+
+    // updateItem Api function
+    return updateElementApi(id, amendedElement)
+      .then(() => {
+        dispatch(fetchAllElementsThunk())
+      })
+      .catch((err: Error) => {
+        err.message
+      })
   }
 }
