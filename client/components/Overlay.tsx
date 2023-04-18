@@ -2,6 +2,7 @@ import overlayModel from '../models/overlayModel'
 import AddProject from './AddProject'
 
 export function Overlay({ isOpen, onClose }: overlayModel) {
+  console.log(onClose, 'onclose')
   return (
     <>
       {isOpen && (
@@ -19,7 +20,7 @@ export function Overlay({ isOpen, onClose }: overlayModel) {
                 onClick={onClose}
               />
             </div>
-            <AddProject />
+            <AddProject onClose={onClose} />
           </div>
         </div>
       )}
