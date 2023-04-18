@@ -90,6 +90,9 @@ button {
   h3 {
     font-size: 1.25em;
   }
+  h3:hover {
+    opacity: 0.75;
+  }
   
   p {
     font-size: 1em;
@@ -100,10 +103,6 @@ button {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   }
-}
-
-.projectCard:hover {
-  opacity: 0.75;
 }
 
 // Add project form

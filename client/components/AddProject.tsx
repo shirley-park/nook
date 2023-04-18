@@ -3,11 +3,12 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import projectModel from '../models/projectModel'
 import { useAppDispatch } from '../hooks/redux'
 import { addNewProjectThunk } from '../actions/projectsActions'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+import overlayModel from '../models/overlayModel'
 
 // --------------------
 
-function AddProject() {
+function AddProject({ onClose }: overlayModel) {
   const dispatch = useAppDispatch()
 
   const [newProject, setNewProject] = useState({} as projectModel)
@@ -21,14 +22,14 @@ function AddProject() {
     })
   }
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const handleAdd = (e: FormEvent) => {
     e.preventDefault()
     console.log(newProject)
     dispatch(addNewProjectThunk(newProject))
-    // REDIRECT TO HOME
-    navigate('/')
+    onClose()
+    // navigate('/')
   }
 
   return (
@@ -48,7 +49,6 @@ function AddProject() {
         <div className="addFormField">
           <label htmlFor="description">What vibes are you going for?</label>
           <br />
-          {/* <input id="vibes" type="textarea" required /> */}
           <textarea
             onChange={changeHandler}
             id="description"
