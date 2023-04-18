@@ -89,14 +89,10 @@ button {
   
   h3 {
     font-size: 1.25em;
-    // padding-left: 10px;
-    // padding-right: 10px;
   }
   
   p {
     font-size: 1em;
-    // padding-left: 10px;
-    // padding-right: 10px;
   }
 
   img {
@@ -113,6 +109,7 @@ button {
 // Add project form
 
 .addProjectform {
+  width: 25vw;
 
   .addFormField {
     margin-top: 15px;
@@ -208,22 +205,20 @@ img {
       .editDeleteIcons {
         display: flex;
         align-items: right;
-        
-         .material-symbols-outlined {
-          padding: 5px;
-          margin-left: 15px;
-        }
-
-        .material-symbols-outlined:hover {
-          margin-left: 15px;
-          border: 1px;
-          border-radius: 50%;
-          padding: 5px;
-          background-color: rgba(216, 216, 216, 0.198);
-        }
+      
       }
     
   }
+}
+.material-symbols-outlined {
+  color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+.material-symbols-outlined:hover {
+  border: 1px;
+  border-radius: 50%;
+  background-color: rgba(216, 216, 216, 0.198);
 }
 
 // Add project overlay
@@ -315,8 +310,43 @@ img {
 }
 
 .invisibleButton {
+  display: flex;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  color: rgb(126, 126, 126);
+
   background-color: rgba(255, 255, 255, 0.421);
   border: none;
   border-radius: 15px;
 }
 
+// edit element form
+
+.editForm {
+  border: 1px solid rgba(227, 186, 90, 0.187);
+  border-radius: 15px;
+  padding: 10px;
+
+  .editInput {
+    width: 90%;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.419);
+    border-radius: 7px;
+    font-family: 'Jost', sans-serif;
+    margin-top: 3px;
+    margin-bottom: 15px;
+  } 
+}
+
+// Footer
+
+footer {
+  margin-top: 40px;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 15px;
+  }
+}

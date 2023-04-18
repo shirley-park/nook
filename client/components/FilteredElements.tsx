@@ -15,7 +15,6 @@ import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
 
 import ElementCard from './ElementCard'
-import { addNewElementApi } from '../apis/elementsApi'
 
 // --------------------
 
@@ -73,6 +72,7 @@ function FilteredElements() {
 
       <button className="invisibleButton" onClick={toggleVisible}>
         <span className="material-symbols-outlined">add_circle</span>
+        click to add
       </button>
 
       {/* toggle add Element form */}
@@ -90,7 +90,7 @@ function FilteredElements() {
             />
           </div>
           <div className="addFormField">
-            <label htmlFor="make">Brand/manufacturer:</label>
+            <label htmlFor="make">Brand/manufacturer</label>
             <br />
             <input
               onChange={changeHandler}
