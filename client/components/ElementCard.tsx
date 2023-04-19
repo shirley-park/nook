@@ -58,11 +58,11 @@ function ElementCard({ element }: { element: elementModel }) {
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
         <div className="editDeleteIcons">
-          <button className="invisibleButton" onClick={toggleVisible}>
+          <button className="iconButton" onClick={toggleVisible}>
             <span className="material-symbols-outlined">edit</span>
           </button>
           <button
-            className="invisibleButton"
+            className="iconButton"
             onClick={() => {
               handleDelete(element.id)
             }}
@@ -71,6 +71,8 @@ function ElementCard({ element }: { element: elementModel }) {
           </button>
         </div>
       </div>
+
+      {/* edit form */}
       {editFormVisible && (
         <div>
           <form onSubmit={handleSubmitEdit} className="editForm">

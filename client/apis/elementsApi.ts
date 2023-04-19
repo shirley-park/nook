@@ -5,10 +5,10 @@ import elementModel from '../models/elementModel'
 
 // --------------------
 
-const url = '/api/v1/nook/elements/'
+const url = '/api/v1/nook/'
 
 export function fetchElementsApi(): Promise<elementModel[]> {
-  return request.get(url).then((res) => {
+  return request.get(`${url}elements/`).then((res) => {
     return res.body
   })
 }

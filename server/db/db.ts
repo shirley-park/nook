@@ -23,28 +23,9 @@ export function addNewProject(
     .then((newProjectObjArr) => newProjectObjArr[0])
 }
 
-// export function addNewProject(
-//   newProject: projectModel,
-//   db = connection
-// ): Promise<projectModel> {
-//   return knex
-//     .transaction(function (t) {
-//       return db('projects')
-//         .transacting(t)
-//         .insert(newProject)
-//         .then(function (response) {
-//           return db('spaces').transacting(t).insert({})
-//         })
-//         .then(t.commit)
-//         .catch(t.rollback)
-//     })
-//     .then(function () {
-//       // transaction suceeded, data written
-//     })
-//     .catch(function () {
-//       // transaction failed, data rolled back
-//     })
-// }
+export function deleteProject(projectId: number, db = connection) {
+  return db('projects').where('id', projectId).delete()
+}
 
 // ---- SPACES
 

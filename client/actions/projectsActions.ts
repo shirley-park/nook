@@ -1,7 +1,11 @@
 import type { ThunkAction } from '../store'
 
 // import api function
-import { addNewProjectApi, fetchProjectsApi } from '../apis/projectsApi'
+import {
+  addNewProjectApi,
+  deleteProjectApi,
+  fetchProjectsApi,
+} from '../apis/projectsApi'
 
 // import model
 import projectModel from '../models/projectModel'
@@ -10,10 +14,12 @@ import projectModel from '../models/projectModel'
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS'
 export const ADD_PROJECT = 'ADD_PROJECT'
+export const DELETE_PROJECT = 'DELETE_PROJECT'
 
 export type Action =
   | { type: 'RECEIVE_PROJECTS'; payload: projectModel[] }
   | { type: 'ADD_PROJECT'; payload: projectModel }
+  | { type: 'DELETE_PROJECT'; payload: number }
 
 // SIMPLE ACTIONS
 
@@ -28,6 +34,13 @@ function addNewProject(newProject: projectModel): Action {
   return {
     type: 'ADD_PROJECT',
     payload: newProject,
+  }
+}
+
+function deleteProject(projectId: number): Action {
+  return {
+    type: 'DELETE_PROJECT',
+    payload: projectId,
   }
 }
 
@@ -51,6 +64,15 @@ export function addNewProjectThunk(formInput: projectModel): ThunkAction {
       .then((newProject) => {
         dispatch(addNewProject(newProject))
       })
+      .catch((err) => err.message)
+  }
+}
+
+// delete project thunk
+export function deleteProjectThunk(projectId: projectModel['id']): ThunkAction {
+  return (dispatch) => {
+    return deleteProjectApi(projectId)
+      .then(() => dispatch(deleteProject(projectId)))
       .catch((err) => err.message)
   }
 }

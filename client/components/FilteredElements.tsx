@@ -59,7 +59,6 @@ function FilteredElements() {
 
   const handleAddElement = (e: FormEvent) => {
     e.preventDefault()
-    console.log(newElement)
     dispatch(addNewElementThunk(newElement, projectId))
   }
 
@@ -69,7 +68,7 @@ function FilteredElements() {
     <>
       <h3>Elements</h3>
 
-      <button className="invisibleButton" onClick={toggleVisible}>
+      <button className="iconButton" onClick={toggleVisible}>
         <span className="material-symbols-outlined">add_circle</span>
         click to add
       </button>
