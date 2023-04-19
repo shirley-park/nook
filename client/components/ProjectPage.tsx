@@ -33,7 +33,7 @@ function ProjectPage() {
 
   // console.log(state)
 
-  const projectImageArr = state.project.image.split(',')
+  const projectImageArr = state.project.image.split('|')
   // console.log(projectImageArr)
 
   return (

@@ -23,7 +23,7 @@ function ProjectCard({ project }: { project: projectModel }) {
     dispatch(fetchAllProjectsThunk())
   }, [dispatch])
 
-  const projectImageArr = project.image.split(',')
+  const projectImageArr = project.image.split('|')
 
   const handleDelete = (projectId: projectModel['id']) => {
     dispatch(deleteProjectThunk(projectId))

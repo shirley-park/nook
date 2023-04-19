@@ -59,7 +59,7 @@ function AddProject({ onClose }: overlayModel) {
         </div>
         <div className="addFormField">
           <label htmlFor="image">
-            image URL - separate multiple URLs by commas
+            image URL - separate multiple URLs by vertical bars '|'
           </label>
           <br />
           <textarea
