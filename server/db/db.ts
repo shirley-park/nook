@@ -42,7 +42,7 @@ export function deleteProject(projectId: number, db = connection) {
 // ---- ELEMENTS
 
 export function getAllElements(db = connection): Promise<elementModel[]> {
-  return db('elements').select()
+  return db('elements').select().orderBy('id', 'desc')
 }
 
 export function addNewElementDb(
