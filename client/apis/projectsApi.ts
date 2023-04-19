@@ -22,3 +22,7 @@ export function addNewProjectApi(
       return res.body
     })
 }
+
+export function deleteProjectApi(projectId: number) {
+  return request.delete('/api/v1/nook/' + projectId).then((res) => res.body)
+}

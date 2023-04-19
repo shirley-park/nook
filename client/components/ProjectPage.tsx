@@ -31,10 +31,10 @@ function ProjectPage() {
   const location = useLocation()
   const { state } = location
 
-  console.log(state)
+  // console.log(state)
 
   const projectImageArr = state.project.image.split(',')
-  console.log(projectImageArr)
+  // console.log(projectImageArr)
 
   return (
     <>

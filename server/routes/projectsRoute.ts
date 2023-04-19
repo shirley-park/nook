@@ -24,6 +24,13 @@ router.post('/', (req, res) => {
     .catch((err) => err.message)
 })
 
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteProject(id)
+    .then(() => res.status(200).send('project deleted!'))
+    .catch((err) => err.message)
+})
+
 // router.get('/project/:id', (req, res) => {
 //   const projectId = Number(req.params.id)
 

@@ -91,6 +91,7 @@ button {
     font-size: 1.25em;
   }
   h3:hover {
+    color: rgb(110, 146, 0);
     opacity: 0.75;
   }
   
@@ -98,10 +99,22 @@ button {
     font-size: 1em;
   }
 
+  p:hover {
+    color: rgb(110, 146, 0);
+  }
+
   img {
   max-width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  }
+
+  .projectCardH3Delete {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -308,7 +321,7 @@ img {
   font-weight: 400;
 }
 
-.invisibleButton {
+.iconButton {
   display: flex;
   align-items: center;
   font-family: 'Jost', sans-serif;

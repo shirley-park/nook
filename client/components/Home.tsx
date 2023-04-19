@@ -24,7 +24,6 @@ function Home() {
   const allProjects = useAppSelector(
     (state) => state.projectsState as projectModel[]
   )
-  console.log(allProjects)
 
   return (
     <>
