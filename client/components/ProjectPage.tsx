@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 
 import FilteredElements from './FilteredElements'
+import FadeInAnimation from './FadeInAnimation'
 
 // --------------------
 
@@ -38,23 +39,25 @@ function ProjectPage() {
 
   return (
     <>
-      {/* Shrena Added */}
-      <h3>{state.project.space}</h3>
-      <p>{state.project.description}</p>
-      <div className="projectInspGrid">
-        {projectImageArr.map((imageUrl: string, i: number) => (
-          <img src={imageUrl} alt={state.project.space} key={i} />
-        ))}
-      </div>
-      {/* Shrena Added */}
+      <FadeInAnimation wrapperElement="div">
+        <div>
+          <h3>{state.project.space}</h3>
+          <p>{state.project.description}</p>
+          <div className="projectInspGrid">
+            {projectImageArr.map((imageUrl: string, i: number) => (
+              <img src={imageUrl} alt={state.project.space} key={i} />
+            ))}
+          </div>
+        </div>
+      </FadeInAnimation>
 
+      {/* Shrena Added */}
       {/* 
       <h3>{theProject?.space}</h3>
       <p>{theProject?.description}</p>
       <div className="projectInspGrid">
         <img src={theProject?.image} alt={theProject?.description} />
       </div> */}
-
       <hr />
       <div>
         <FilteredElements />

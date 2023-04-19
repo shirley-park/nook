@@ -16,6 +16,8 @@ import { useParams } from 'react-router-dom'
 
 import ElementCard from './ElementCard'
 
+import { motion } from 'framer-motion'
+
 // --------------------
 
 function FilteredElements() {
@@ -61,6 +63,8 @@ function FilteredElements() {
     e.preventDefault()
     dispatch(addNewElementThunk(newElement, projectId))
   }
+
+  console.log(motion)
 
   //  Add element form ----
 
@@ -137,12 +141,18 @@ function FilteredElements() {
           </button>
         </form>
       )}
-
+      {/* 
+      <motion.section
+        initial={{ opacity: 0.2, scale: 0.2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      > */}
       <section className="elementsGrid">
         {filteredList.map((element) => (
           <ElementCard key={element.id} element={element} />
         ))}
       </section>
+      {/* </motion.section> */}
     </>
   )
 }

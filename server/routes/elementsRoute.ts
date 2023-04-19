@@ -36,7 +36,7 @@ router.post('/:id', (req, res) => {
     .catch((err) => err.message)
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/elements/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteElementDb(id)
     .then(() => res.status(200).send('deleted!'))
