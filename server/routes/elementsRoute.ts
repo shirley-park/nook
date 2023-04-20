@@ -6,7 +6,7 @@ router.use(express.json())
 
 // --------------------
 
-router.get('/elements', (req, res) => {
+router.get('/', (req, res) => {
   db.getAllElements()
     .then((elements) => {
       res.json(elements)
@@ -36,7 +36,7 @@ router.post('/:id', (req, res) => {
     .catch((err) => err.message)
 })
 
-router.delete('/elements/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteElementDb(id)
     .then(() => res.status(200).send('deleted!'))

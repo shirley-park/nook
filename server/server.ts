@@ -9,7 +9,8 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
-server.use('/api/v1/nook', projectsRoute, elementsRoute)
+server.use('/api/v1/projects', projectsRoute)
+server.use('/api/v1/elements', elementsRoute)
 
 // Wildcard route
 server.get('*', (req, res) => {
