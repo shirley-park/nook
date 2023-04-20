@@ -4,7 +4,7 @@ import projectModel from '../models/projectModel'
 
 // --------------------
 
-const url = '/api/v1/nook/'
+const url = '/api/v1/projects/'
 
 export function fetchProjectsApi(): Promise<projectModel[]> {
   return request.get(url).then((res) => {
@@ -24,5 +24,5 @@ export function addNewProjectApi(
 }
 
 export function deleteProjectApi(projectId: number) {
-  return request.delete('/api/v1/nook/' + projectId).then((res) => res.body)
+  return request.delete(url + projectId).then((res) => res.body)
 }
