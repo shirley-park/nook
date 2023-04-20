@@ -76,7 +76,7 @@ exports.seed = async function (knex) {
       id: 7,
       // space_id: 2,
       project_id: 2,
-      item_name: 'Rain shower head and mixer',
+      item_name: 'Rain shower head',
       make: 'Plumbline',
       description: 'Colour: brushed nickel, without the handheld thing',
       imageUrl:
@@ -115,6 +115,51 @@ exports.seed = async function (knex) {
       imageUrl:
         'https://cdn.shopify.com/s/files/1/0012/2005/1002/products/OffsetCoffeeTable_Black.jpg?v=1656568143',
       element_tag: 'furniture',
+    },
+    {
+      id: 11,
+      // space_id: 3,
+      project_id: 2,
+      item_name: 'Floor tiles',
+      make: 'The Tile Company',
+      description: 'Colour: Andes Lava. Large format only for bathroom floors.',
+      imageUrl:
+        'https://www.tilewarehouse.co.nz/media/1840103/glx17-arctic-grey-f1.jpg?mode=pad&width=1280&height=1280&bgcolor=fff&rnd=132273135920000000',
+      element_tag: 'flooring',
+    },
+    {
+      id: 12,
+      // space_id: 3,
+      project_id: 2,
+      item_name: 'Bathroom basin',
+      make: 'Plumbline',
+      description: 'Colour: grey marble. From the Plumbline Marmo range',
+      imageUrl:
+        'https://plumbline.co.nz/pub/media/rokanthemes/blog/images/m/a/marmo_journal_hero_image.jpg',
+      element_tag: 'plumbing',
+    },
+    {
+      id: 13,
+      // space_id: 3,
+      project_id: 3,
+      item_name: 'Wall paint',
+      make: 'Resene',
+      description: 'Colour: half tea. For the living room walls',
+      imageUrl:
+        'https://archipro.co.nz/assets/ReseneColours/Resene-Half-Tea.jpg?raw=1',
+      element_tag: 'paint',
+    },
+    {
+      id: 14,
+      // space_id: 3,
+      project_id: 2,
+      item_name: 'Wall mounted tap',
+      make: 'Methven',
+      description:
+        'In stainless steel. Methven Minimalist single lever wall mounted mixer',
+      imageUrl:
+        'https://www.plumbingworld.co.nz/productimages/magnify/1/3592_3660_5954.jpg',
+      element_tag: 'plumbing',
     },
   ])
 }
