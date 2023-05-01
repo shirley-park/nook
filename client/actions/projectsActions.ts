@@ -69,9 +69,12 @@ export function addNewProjectThunk(formInput: projectModel): ThunkAction {
 }
 
 // delete project thunk
-export function deleteProjectThunk(projectId: projectModel['id']): ThunkAction {
+export function deleteProjectThunk(
+  projectId: projectModel['id'],
+  token: string
+): ThunkAction {
   return (dispatch) => {
-    return deleteProjectApi(projectId)
+    return deleteProjectApi(projectId, token)
       .then(() => dispatch(deleteProject(projectId)))
       .catch((err) => err.message)
   }
