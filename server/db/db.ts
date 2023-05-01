@@ -27,18 +27,6 @@ export function deleteProject(projectId: number, db = connection) {
   return db('projects').where('id', projectId).delete()
 }
 
-// ---- SPACES
-
-// export function getElementsByProjectId(
-//   projectId: number,
-//   db = connection
-// ): Promise<elementModel[]> {
-//   return db('elements')
-//     .select()
-//     .where('projects_id', projectId)
-//     .join('spaces', 'projects_id', 'project_id')
-// }
-
 // ---- ELEMENTS
 
 export function getAllElements(db = connection): Promise<elementModel[]> {
