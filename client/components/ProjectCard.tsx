@@ -1,5 +1,8 @@
+// Imports
 import { Link } from 'react-router-dom'
+
 import projectModel from '../models/projectModel'
+
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {
@@ -8,8 +11,12 @@ import {
 } from '../actions/projectsActions'
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
+// import { useEffect } from 'react'
+
+// --------------------
 
 function ProjectCard({ project }: { project: projectModel }) {
+  // console.log(project)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -20,10 +27,14 @@ function ProjectCard({ project }: { project: projectModel }) {
 
   const handleDelete = (projectId: projectModel['id']) => {
     dispatch(deleteProjectThunk(projectId))
+    // .then(() => dispatch(fetchAllProjectsThunk()))
+    // .catch((err) => err.message)
   }
 
   return (
     <div className="projectCard">
+      {/* Shrena added state={{ project }} */}
+
       <div className="carouselBox">
         <Carousel
           useKeyboardArrows={true}
@@ -35,6 +46,7 @@ function ProjectCard({ project }: { project: projectModel }) {
           ))}
         </Carousel>
       </div>
+      {/* <img src={projectImageArr[0]} alt={`${project.space} project`} /> */}
       <div className="projectCardH3Delete">
         <Link
           to={`/project/${project.id}`}

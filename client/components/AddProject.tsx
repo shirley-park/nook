@@ -1,8 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
+
 import projectModel from '../models/projectModel'
 import { useAppDispatch } from '../hooks/redux'
 import { addNewProjectThunk } from '../actions/projectsActions'
+// import { useNavigate } from 'react-router-dom'
 import overlayModel from '../models/overlayModel'
+
+// --------------------
 
 function AddProject({ onClose }: overlayModel) {
   const dispatch = useAppDispatch()
@@ -18,10 +22,14 @@ function AddProject({ onClose }: overlayModel) {
     })
   }
 
+  // const navigate = useNavigate()
+
   const handleAdd = (e: FormEvent) => {
     e.preventDefault()
+    console.log(newProject)
     dispatch(addNewProjectThunk(newProject))
     onClose()
+    // navigate('/')
   }
 
   return (
@@ -60,6 +68,14 @@ function AddProject({ onClose }: overlayModel) {
             value={newProject.image || ''}
           />
           <br />
+          {/* or
+          <br />
+          <input
+            onChange={changeHandler}
+            id="image"
+            type="file"
+            className="fileUpload"
+          /> */}
         </div>
         <br />
         <button type="submit" className="addProjButton">

@@ -17,6 +17,7 @@ function ElementCard({ element }: { element: elementModel }) {
 
   const toggleVisible = () => {
     toggleVisibility(!editFormVisible)
+    console.log(editFormVisible)
   }
 
   const [formDeets, setFormDeets] = useState({} as elementModel)
@@ -26,6 +27,7 @@ function ElementCard({ element }: { element: elementModel }) {
   const changeHandler = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    console.log(e.target.value)
     setFormDeets({
       ...formDeets,
       [e.target.id]: e.target.value,
