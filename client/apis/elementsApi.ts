@@ -1,8 +1,5 @@
 import request from 'superagent'
-
 import elementModel from '../models/elementModel'
-
-// --------------------
 
 const url = '/api/v1/elements/'
 

@@ -1,8 +1,5 @@
 import request from 'superagent'
-
 import projectModel from '../models/projectModel'
-
-// --------------------
 
 const url = '/api/v1/projects/'
 
