@@ -1,19 +1,11 @@
 import type { ThunkAction } from '../store'
-
-// import api function
 import {
   fetchElementsApi,
   deleteElementApi,
   updateElementApi,
 } from '../apis/elementsApi'
 import { addNewElementApi } from '../apis/elementsApi'
-
-// import elementModel
 import elementModel from '../models/elementModel'
-// import { ElementType } from 'react'
-// import projectModel from '../models/projectModel'
-
-// --------------------
 
 export const RECEIVE_ELEMENTS = 'RECEIVE_ELEMENTS'
 export const ADD_ELEMENT = 'ADD_ELEMENT'
@@ -106,7 +98,6 @@ export function updateElementThunk(
   amendedElement: elementModel
 ): ThunkAction {
   return (dispatch) => {
-    console.log(amendedElement)
     // dispatch the updateItem action
     dispatch(updateElementAction(amendedElement))
 
