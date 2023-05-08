@@ -1,8 +1,5 @@
-// Imports
 import { Link } from 'react-router-dom'
-
 import projectModel from '../models/projectModel'
-
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {
@@ -12,8 +9,6 @@ import {
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-
-// --------------------
 
 function ProjectCard({ project }: { project: projectModel }) {
   const { getAccessTokenSilently } = useAuth0()
@@ -40,26 +35,8 @@ function ProjectCard({ project }: { project: projectModel }) {
     }
   }
 
-  // const handleDelete = async (id: number) => {
-  //   try {
-  //     const token = await getAccessTokenSilently()
-  //     // TODO: pass token as second parameter
-  //     const fruits = await deleteFruit(id, token)
-
-  //     setFruits(fruits)
-  //     handleCloseForm()
-  //     hideError()
-  //   } catch (err: unknown) {
-  //     if (err instanceof Error) {
-  //       setError(err.message)
-  //     }
-  //   }
-  // }
-
   return (
     <div className="projectCard">
-      {/* Shrena added state={{ project }} */}
-
       <div className="carouselBox">
         <Carousel
           useKeyboardArrows={true}
@@ -71,7 +48,6 @@ function ProjectCard({ project }: { project: projectModel }) {
           ))}
         </Carousel>
       </div>
-      {/* <img src={projectImageArr[0]} alt={`${project.space} project`} /> */}
       <div className="projectCardH3Delete">
         <Link
           to={`/project/${project.id}`}

@@ -1,10 +1,8 @@
 import overlayModel from '../models/overlayModel'
 import AddProject from './AddProject'
-
 import FadeInAnimation from './FadeInAnimation'
 
 export function Overlay({ isOpen, onClose }: overlayModel) {
-  // console.log(onClose, 'onclose')
   return (
     <>
       {isOpen && (
