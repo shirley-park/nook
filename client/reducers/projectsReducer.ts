@@ -4,10 +4,7 @@ import {
   ADD_PROJECT,
   DELETE_PROJECT,
 } from '../actions/projectsActions'
-
 import projectModel from '../models/projectModel'
-
-// --------------------
 
 const initialState = [] as projectModel[]
 

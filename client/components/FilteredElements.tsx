@@ -1,24 +1,12 @@
-// Imports
-
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-
-// import fetchAllThunk from elements.actions
 import {
   addNewElementThunk,
   fetchAllElementsThunk,
 } from '../actions/elementsActions'
-
-// element model
 import elementModel from '../models/elementModel'
-
 import { useParams } from 'react-router-dom'
-
 import ElementCard from './ElementCard'
-
-import { motion } from 'framer-motion'
-
-// --------------------
 
 function FilteredElements() {
   const dispatch = useAppDispatch()
@@ -37,12 +25,10 @@ function FilteredElements() {
   const filteredList = allElements.filter((el) => el.project_id === projectId)
 
   //  Add element form ----
-
   const [formVisible, toggleVisibility] = useState(false)
 
   const toggleVisible = () => {
     toggleVisibility(!formVisible)
-    console.log(formVisible)
   }
 
   const [newElement, setNewElement] = useState({} as elementModel)
@@ -52,7 +38,6 @@ function FilteredElements() {
   const changeHandler = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    console.log(e.target.value)
     setNewElement({
       ...newElement,
       [e.target.id]: e.target.value,
@@ -63,8 +48,6 @@ function FilteredElements() {
     e.preventDefault()
     dispatch(addNewElementThunk(newElement, projectId))
   }
-
-  //  Add element form
 
   return (
     <>
@@ -139,18 +122,12 @@ function FilteredElements() {
           </button>
         </form>
       )}
-      {/* 
-      <motion.section
-        initial={{ opacity: 0.2, scale: 0.2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      > */}
+
       <section className="elementsGrid">
         {filteredList.map((element) => (
           <ElementCard key={element.id} element={element} />
         ))}
       </section>
-      {/* </motion.section> */}
     </>
   )
 }

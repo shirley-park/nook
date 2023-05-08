@@ -4,10 +4,7 @@ import {
   ADD_ELEMENT,
   DELETE_ELEMENT,
 } from '../actions/elementsActions'
-
 import elementModel from '../models/elementModel'
-
-// --------------------
 
 const initialState = [] as elementModel[]
 

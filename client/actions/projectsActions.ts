@@ -1,16 +1,10 @@
 import type { ThunkAction } from '../store'
-
-// import api function
 import {
   addNewProjectApi,
   deleteProjectApi,
   fetchProjectsApi,
 } from '../apis/projectsApi'
-
-// import model
 import projectModel from '../models/projectModel'
-
-// --------------------
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS'
 export const ADD_PROJECT = 'ADD_PROJECT'
