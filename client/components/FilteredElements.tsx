@@ -64,9 +64,7 @@ function FilteredElements() {
     dispatch(addNewElementThunk(newElement, projectId))
   }
 
-  console.log(motion)
-
-  //  Add element form ----
+  //  Add element form
 
   return (
     <>

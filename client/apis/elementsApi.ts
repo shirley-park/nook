@@ -1,7 +1,6 @@
 import request from 'superagent'
 
 import elementModel from '../models/elementModel'
-// import projectModel from '../models/projectModel'
 
 // --------------------
 

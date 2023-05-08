@@ -11,12 +11,13 @@ import {
 } from '../actions/projectsActions'
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
-// import { useEffect } from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
 
 // --------------------
 
 function ProjectCard({ project }: { project: projectModel }) {
-  // console.log(project)
+  const { getAccessTokenSilently } = useAuth0()
+
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -25,11 +26,35 @@ function ProjectCard({ project }: { project: projectModel }) {
 
   const projectImageArr = project.image.split('|')
 
-  const handleDelete = (projectId: projectModel['id']) => {
-    dispatch(deleteProjectThunk(projectId))
-    // .then(() => dispatch(fetchAllProjectsThunk()))
-    // .catch((err) => err.message)
+  const handleDelete = async (projectId: projectModel['id']) => {
+    try {
+      const token = await getAccessTokenSilently()
+
+      const deleteProject = await dispatch(deleteProjectThunk(projectId, token))
+
+      return deleteProject
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.log(err.message)
+      }
+    }
   }
+
+  // const handleDelete = async (id: number) => {
+  //   try {
+  //     const token = await getAccessTokenSilently()
+  //     // TODO: pass token as second parameter
+  //     const fruits = await deleteFruit(id, token)
+
+  //     setFruits(fruits)
+  //     handleCloseForm()
+  //     hideError()
+  //   } catch (err: unknown) {
+  //     if (err instanceof Error) {
+  //       setError(err.message)
+  //     }
+  //   }
+  // }
 
   return (
     <div className="projectCard">
