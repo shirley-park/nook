@@ -5,6 +5,7 @@ import {
   deleteElementThunk,
   updateElementThunk,
 } from '../actions/elementsActions'
+import { IfAuthenticated } from './Authenticated'
 
 function ElementCard({ element }: { element: elementModel }) {
   const dispatch = useAppDispatch()
@@ -51,19 +52,21 @@ function ElementCard({ element }: { element: elementModel }) {
       </div>
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
-        <div className="editDeleteIcons">
-          <button className="iconButton" onClick={toggleVisible}>
-            <span className="material-symbols-outlined">edit</span>
-          </button>
-          <button
-            className="iconButton"
-            onClick={() => {
-              handleDelete(element.id)
-            }}
-          >
-            <span className="material-symbols-outlined">delete</span>
-          </button>
-        </div>
+        <IfAuthenticated>
+          <div className="editDeleteIcons">
+            <button className="iconButton" onClick={toggleVisible}>
+              <span className="material-symbols-outlined">edit</span>
+            </button>
+            <button
+              className="iconButton"
+              onClick={() => {
+                handleDelete(element.id)
+              }}
+            >
+              <span className="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+        </IfAuthenticated>
       </div>
 
       {/* edit form */}

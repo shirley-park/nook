@@ -30,10 +30,10 @@ function Nav() {
           </Link>
         </h1>
         <div className="navItems_right">
-          <Link to="/elements" className="elements link">
+          <Link to="/elements" className="">
             <button className="navbutton">my elements</button>
           </Link>
-          <div className="App">
+          <IfAuthenticated>
             <button className="navbutton" onClick={toggleOverlay}>
               add project
             </button>
@@ -41,12 +41,11 @@ function Nav() {
             <Overlay isOpen={isOpen} onClose={toggleOverlay}>
               <AddProject />
             </Overlay>
-          </div>
-          <IfAuthenticated>
+
             <button className="navbutton" onClick={handleSignOut}>
               sign out
             </button>
-            {user && <p>Signed in as: {user?.nickname}</p>}
+            {/* {user && <p>Signed in as: {user?.nickname}</p>} */}
           </IfAuthenticated>
           <IfNotAuthenticated>
             <button className="navbutton" onClick={handleSignIn}>

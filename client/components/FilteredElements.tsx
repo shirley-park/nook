@@ -7,6 +7,7 @@ import {
 import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
 import ElementCard from './ElementCard'
+import { IfAuthenticated } from './Authenticated'
 
 function FilteredElements() {
   const dispatch = useAppDispatch()
@@ -52,12 +53,12 @@ function FilteredElements() {
   return (
     <>
       <h3>Elements</h3>
-
-      <button className="iconButton" onClick={toggleVisible}>
-        <span className="material-symbols-outlined">add_circle</span>
-        click to add
-      </button>
-
+      <IfAuthenticated>
+        <button className="iconButton" onClick={toggleVisible}>
+          <span className="material-symbols-outlined">add_circle</span>
+          click to add
+        </button>
+      </IfAuthenticated>
       {/* toggle add Element form */}
       {formVisible && (
         <form onSubmit={handleAddElement} className="addElementform">
