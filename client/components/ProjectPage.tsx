@@ -6,7 +6,7 @@ function ProjectPage() {
   const location = useLocation()
   const { state } = location
 
-  const projectImageArr = state.project.image.split('|')
+  const projectImageArr = state.project.image.split(',')
 
   return (
     <>

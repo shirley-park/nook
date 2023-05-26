@@ -20,7 +20,7 @@ function ProjectCard({ project }: { project: projectModel }) {
     dispatch(fetchAllProjectsThunk())
   }, [dispatch])
 
-  const projectImageArr = project.image.split('|')
+  const projectImageArr = project.image.split(',')
 
   const handleDelete = async (projectId: projectModel['id']) => {
     try {
