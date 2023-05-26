@@ -126,10 +126,9 @@ function ElementCard({ element }: { element: elementModel }) {
             <br />
             <input
               id="imageUrl"
-              value={formDeets.imageUrl || element.imageUrl}
+              value={formDeets.imageUrl || ''}
               type="text"
               className="editInput"
-              placeholder={element.imageUrl}
               onChange={changeHandler}
             />
             <br />
