@@ -68,14 +68,14 @@ function ProjectCard({ project }: { project: projectModel }) {
         >
           <h3>{project.space}</h3>
         </Link>
-        {/* <IfAuthenticated> */}
-        <MdOutlineDelete
-          className="iconButton"
-          onClick={() => {
-            handleDelete(project.id)
-          }}
-        />
-        {/* </IfAuthenticated> */}
+        <IfAuthenticated>
+          <MdOutlineDelete
+            className="iconButton"
+            onClick={() => {
+              handleDelete(project.id)
+            }}
+          />
+        </IfAuthenticated>
       </div>
       <Link to={`/project/${project.id}`} state={{ project }} className="link">
         <p>{project.description}</p>

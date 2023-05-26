@@ -56,12 +56,11 @@ function FilteredElements() {
       {' '}
       <AnimatePresence>
         <h3>Elements</h3>
-        {/* <IfAuthenticated> */}
-
-        <button className="addProjButton" onClick={toggleVisible}>
-          {formVisible ? 'collapse' : '+ click to add'}
-        </button>
-        {/* </IfAuthenticated> */}
+        <IfAuthenticated>
+          <button className="addProjButton" onClick={toggleVisible}>
+            {formVisible ? 'collapse' : '+ click to add'}
+          </button>
+        </IfAuthenticated>
         {/* toggle add Element form */}
         {formVisible && (
           <motion.form
@@ -73,7 +72,6 @@ function FilteredElements() {
             exit={{ opacity: 1 }}
             transition={{ duation: 0.5 }}
           >
-            {/* <form onSubmit={handleAddElement} className="addElementform"> */}
             <div className="addFormField">
               <label htmlFor="item_name">Element item</label>
               <br />
@@ -133,7 +131,6 @@ function FilteredElements() {
             <button type="submit" className="addProjButton">
               Add element
             </button>
-            {/* </form> */}
           </motion.form>
         )}
 

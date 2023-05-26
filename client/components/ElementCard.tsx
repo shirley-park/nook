@@ -54,27 +54,27 @@ function ElementCard({ element }: { element: elementModel }) {
 
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
-        {/* <IfAuthenticated> */}
-        <div className="editDeleteIcons">
-          {editMode ? (
-            <button onClick={toggleEditMode} className="cancelEdit">
-              cancel
-            </button>
-          ) : (
-            <MdOutlineModeEdit
-              className="iconButton"
-              onClick={toggleEditMode}
-            />
-          )}
+        <IfAuthenticated>
+          <div className="editDeleteIcons">
+            {editMode ? (
+              <button onClick={toggleEditMode} className="cancelEdit">
+                cancel
+              </button>
+            ) : (
+              <MdOutlineModeEdit
+                className="iconButton"
+                onClick={toggleEditMode}
+              />
+            )}
 
-          <MdOutlineDelete
-            className="iconButton"
-            onClick={() => {
-              handleDelete(element.id)
-            }}
-          />
-        </div>
-        {/* </IfAuthenticated> */}
+            <MdOutlineDelete
+              className="iconButton"
+              onClick={() => {
+                handleDelete(element.id)
+              }}
+            />
+          </div>
+        </IfAuthenticated>
       </div>
 
       {/* edit form */}

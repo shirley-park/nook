@@ -22,11 +22,11 @@ function Home() {
 
   return (
     <>
-      {/* <IfAuthenticated>
+      <IfAuthenticated>
         <h2>Welcome back {user?.name}! Lets sort out your nook</h2>
-      </IfAuthenticated> */}
+      </IfAuthenticated>
 
-      <h2>Welcome back! Lets sort out your nook</h2>
+      {/* <h2>Welcome back! Lets sort out your nook</h2> */}
 
       <section className="projectsGrid">
         <AnimatePresence>
