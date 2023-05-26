@@ -57,8 +57,9 @@ function FilteredElements() {
       <AnimatePresence>
         <h3>Elements</h3>
         {/* <IfAuthenticated> */}
+
         <button className="addProjButton" onClick={toggleVisible}>
-          + click to add
+          {formVisible ? 'collapse' : '+ click to add'}
         </button>
         {/* </IfAuthenticated> */}
         {/* toggle add Element form */}
