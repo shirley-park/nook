@@ -45,7 +45,6 @@ function Nav() {
             <button className="navbutton" onClick={handleSignOut}>
               sign out
             </button>
-            {/* {user && <p>Signed in as: {user?.nickname}</p>} */}
           </IfAuthenticated>
           <IfNotAuthenticated>
             <button className="navbutton" onClick={handleSignIn}>
