@@ -1,19 +1,20 @@
 import { useAppDispatch } from '../hooks/redux'
-import { FormEvent, useState, ChangeEvent, useEffect } from 'react'
+import { FormEvent, useState, ChangeEvent, useEffect, useRef } from 'react'
 import elementModel from '../models/elementModel'
 import {
   deleteElementThunk,
   updateElementThunk,
 } from '../actions/elementsActions'
 import { IfAuthenticated } from './Authenticated'
+import { MdOutlineModeEdit, MdOutlineDelete } from 'react-icons/md'
 
 function ElementCard({ element }: { element: elementModel }) {
   const dispatch = useAppDispatch()
 
-  const [editFormVisible, toggleVisibility] = useState(false)
+  const [editMode, setEditMode] = useState(false)
 
-  const toggleVisible = () => {
-    toggleVisibility(!editFormVisible)
+  const toggleEditMode = () => {
+    setEditMode(!editMode)
   }
 
   const [formDeets, setFormDeets] = useState({} as elementModel)
@@ -33,7 +34,7 @@ function ElementCard({ element }: { element: elementModel }) {
     e.preventDefault()
     dispatch(updateElementThunk(element.id, formDeets))
       .then(() => {
-        toggleVisibility(!editFormVisible)
+        setEditMode(!editMode)
       })
       .catch((err) => {
         console.log(err.message)
@@ -52,25 +53,31 @@ function ElementCard({ element }: { element: elementModel }) {
       </div>
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
-        <IfAuthenticated>
-          <div className="editDeleteIcons">
-            <button className="iconButton" onClick={toggleVisible}>
-              <span className="material-symbols-outlined">edit</span>
+        {/* <IfAuthenticated> */}
+        <div className="editDeleteIcons">
+          {editMode ? (
+            <button onClick={toggleEditMode} className="cancelEdit">
+              cancel
             </button>
-            <button
+          ) : (
+            <MdOutlineModeEdit
               className="iconButton"
-              onClick={() => {
-                handleDelete(element.id)
-              }}
-            >
-              <span className="material-symbols-outlined">delete</span>
-            </button>
-          </div>
-        </IfAuthenticated>
+              onClick={toggleEditMode}
+            />
+          )}
+
+          <MdOutlineDelete
+            className="iconButton"
+            onClick={() => {
+              handleDelete(element.id)
+            }}
+          />
+        </div>
+        {/* </IfAuthenticated> */}
       </div>
 
       {/* edit form */}
-      {editFormVisible && (
+      {editMode && (
         <div>
           <form onSubmit={handleSubmitEdit} className="editForm">
             Edit your element
@@ -82,10 +89,9 @@ function ElementCard({ element }: { element: elementModel }) {
             <br />
             <input
               id="item_name"
-              value={formDeets.item_name || ''}
+              value={formDeets.item_name || element.item_name}
               type="text"
               className="editInput"
-              placeholder={element.item_name}
               onChange={changeHandler}
             />
             <br />
@@ -95,7 +101,7 @@ function ElementCard({ element }: { element: elementModel }) {
             <br />
             <input
               id="make"
-              value={formDeets.make || ''}
+              value={formDeets.make || element.make}
               type="text"
               className="editInput"
               placeholder={element.make}
@@ -108,7 +114,7 @@ function ElementCard({ element }: { element: elementModel }) {
             <br />
             <textarea
               id="description"
-              value={formDeets.description || ''}
+              value={formDeets.description || element.description}
               className="editInput"
               placeholder={element.description}
               onChange={changeHandler}
@@ -123,7 +129,6 @@ function ElementCard({ element }: { element: elementModel }) {
               value={formDeets.imageUrl || ''}
               type="text"
               className="editInput"
-              placeholder={element.imageUrl}
               onChange={changeHandler}
             />
             <br />
@@ -133,7 +138,7 @@ function ElementCard({ element }: { element: elementModel }) {
             <br />
             <input
               id="element_tag"
-              value={formDeets.element_tag || ''}
+              value={formDeets.element_tag || element.element_tag}
               type="text"
               className="editInput"
               placeholder={element.element_tag}

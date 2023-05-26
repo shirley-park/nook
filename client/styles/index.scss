@@ -68,6 +68,28 @@ button {
   margin-top: 50px;
 }
 
+// Home carousel
+
+.carousel .control-next.control-arrow:before {
+  content: '';
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel .control-prev.control-arrow:before {
+  content: '';
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
 // ProjectCard component
 
 .projectCard {
@@ -116,7 +138,6 @@ button {
     label {
       font-weight: 400;
     }
-
   }
 
   input, textarea {
@@ -214,18 +235,20 @@ button {
         align-items: right;
       
       }
-    
   }
-}
-.material-symbols-outlined {
-  color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-}
 
-.material-symbols-outlined:hover {
-  border: 1px;
-  border-radius: 50%;
-  background-color: rgba(216, 216, 216, 0.198);
+  .cancelEdit {
+    background-color: rgba(216, 216, 216, 0.198);
+    border: none;
+    border-radius: 15px;
+    padding:5px 10px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+  }
+  .cancelEdit:hover {
+    background-color: rgba(147, 147, 147, 0.198);
+   
+  }
 }
 
 // Add project overlay
@@ -317,16 +340,31 @@ button {
   font-weight: 400;
 }
 
+.addProjButton:hover {
+  background-color: rgba(147, 147, 147, 0.198);
+ 
+}
+
 .iconButton {
   display: flex;
   align-items: center;
   font-family: 'Jost', sans-serif;
   color: rgb(126, 126, 126);
-
   background-color: rgba(255, 255, 255, 0.421);
   border: none;
   border-radius: 15px;
+  font-size: 25px;
+  padding: 5px;
+
 }
+
+.iconButton:hover {
+  cursor: pointer;
+border: none;
+  border-radius: 50%;
+  background-color: rgba(216, 216, 216, 0.198);
+}
+
 
 // edit element form
 
@@ -339,6 +377,7 @@ button {
     width: 90%;
     padding: 8px 8px 8px 8px;
     border: 1px solid rgba(128, 128, 128, 0.419);
+    color: rgb(126, 126, 126);
     border-radius: 7px;
     font-family: 'Jost', sans-serif;
     margin-top: 3px;
@@ -358,6 +397,27 @@ footer {
     font-size: 15px;
   }
 }
+
+
+// EditTextField
+.textfield--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.textfield--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textfield--input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 
 //  Media queries
 

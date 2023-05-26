@@ -54,9 +54,8 @@ function FilteredElements() {
     <>
       <h3>Elements</h3>
       <IfAuthenticated>
-        <button className="iconButton" onClick={toggleVisible}>
-          <span className="material-symbols-outlined">add_circle</span>
-          click to add
+        <button className="addProjButton" onClick={toggleVisible}>
+          + click to add
         </button>
       </IfAuthenticated>
       {/* toggle add Element form */}
