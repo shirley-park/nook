@@ -8,6 +8,7 @@ import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
 import ElementCard from './ElementCard'
 import { IfAuthenticated } from './Authenticated'
+import MdOutlineModeEdit from 'react-icons/md'
 
 function FilteredElements() {
   const dispatch = useAppDispatch()
@@ -54,9 +55,8 @@ function FilteredElements() {
     <>
       <h3>Elements</h3>
       <IfAuthenticated>
-        <button className="iconButton" onClick={toggleVisible}>
-          <span className="material-symbols-outlined">add_circle</span>
-          click to add
+        <button className="addProjButton" onClick={toggleVisible}>
+          + click to add
         </button>
       </IfAuthenticated>
       {/* toggle add Element form */}

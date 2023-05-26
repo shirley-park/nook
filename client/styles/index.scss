@@ -116,7 +116,6 @@ button {
     label {
       font-weight: 400;
     }
-
   }
 
   input, textarea {
@@ -214,18 +213,20 @@ button {
         align-items: right;
       
       }
-    
   }
-}
-.material-symbols-outlined {
-  color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-}
 
-.material-symbols-outlined:hover {
-  border: 1px;
-  border-radius: 50%;
-  background-color: rgba(216, 216, 216, 0.198);
+  .cancelEdit {
+    background-color: rgba(216, 216, 216, 0.198);
+    border: none;
+    border-radius: 15px;
+    padding:5px 10px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+  }
+  .cancelEdit:hover {
+    background-color: rgba(147, 147, 147, 0.198);
+   
+  }
 }
 
 // Add project overlay
@@ -317,21 +318,27 @@ button {
   font-weight: 400;
 }
 
+.addProjButton:hover {
+  background-color: rgba(147, 147, 147, 0.198);
+ 
+}
+
 .iconButton {
-  font-size: 25px;
   display: flex;
   align-items: center;
-  padding: 5px;
-  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Jost', sans-serif;
+  color: rgb(126, 126, 126);
   background-color: rgba(255, 255, 255, 0.421);
-
+  border: none;
   border-radius: 15px;
+  font-size: 20px;
+  padding: 5px;
 
 }
 
 .iconButton:hover {
   cursor: pointer;
-
+border: none;
   border-radius: 50%;
   background-color: rgba(216, 216, 216, 0.198);
 }
