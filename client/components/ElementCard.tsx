@@ -51,6 +51,7 @@ function ElementCard({ element }: { element: elementModel }) {
         <h3>{element.item_name}</h3>
         <p className="elementTag">{element.element_tag}</p>
       </div>
+
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
         {/* <IfAuthenticated> */}
@@ -77,6 +78,7 @@ function ElementCard({ element }: { element: elementModel }) {
       </div>
 
       {/* edit form */}
+
       {editMode && (
         <div>
           <form onSubmit={handleSubmitEdit} className="editForm">

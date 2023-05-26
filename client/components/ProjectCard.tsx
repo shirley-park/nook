@@ -11,6 +11,7 @@ import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated } from './Authenticated'
 import { MdOutlineDelete } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 function ProjectCard({ project }: { project: projectModel }) {
   const { getAccessTokenSilently } = useAuth0()
@@ -38,7 +39,16 @@ function ProjectCard({ project }: { project: projectModel }) {
   }
 
   return (
-    <div className="projectCard">
+    <motion.div
+      key={project.id}
+      className="projectCard"
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 1 }}
+      transition={{ duation: 0.5 }}
+    >
+      {/* <div className="projectCard"> */}
       <div className="carouselBox">
         <Carousel
           useKeyboardArrows={true}
@@ -71,7 +81,8 @@ function ProjectCard({ project }: { project: projectModel }) {
         <p>{project.description}</p>
       </Link>
       <hr />
-    </div>
+      {/* </div> */}
+    </motion.div>
   )
 }
 

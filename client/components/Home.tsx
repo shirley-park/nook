@@ -5,6 +5,7 @@ import projectModel from '../models/projectModel'
 import ProjectCard from './ProjectCard'
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated } from './Authenticated'
+import { AnimatePresence } from 'framer-motion'
 
 function Home() {
   const dispatch = useAppDispatch()
@@ -28,9 +29,11 @@ function Home() {
       <h2>Welcome back! Lets sort out your nook</h2>
 
       <section className="projectsGrid">
-        {allProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        <AnimatePresence>
+          {allProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </AnimatePresence>
       </section>
     </>
   )
