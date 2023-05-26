@@ -6,6 +6,7 @@ import {
   updateElementThunk,
 } from '../actions/elementsActions'
 import { IfAuthenticated } from './Authenticated'
+import { MdOutlineModeEdit, MdOutlineDelete } from 'react-icons/md'
 
 function ElementCard({ element }: { element: elementModel }) {
   const dispatch = useAppDispatch()
@@ -52,21 +53,28 @@ function ElementCard({ element }: { element: elementModel }) {
       </div>
       <div className="h4AndSymbolsDiv">
         <h4>{element.make}</h4>
-        <IfAuthenticated>
-          <div className="editDeleteIcons">
-            <button className="iconButton" onClick={toggleVisible}>
+        {/* <IfAuthenticated> */}
+        <div className="editDeleteIcons">
+          {/* <button className="iconButton" onClick={toggleVisible}>
               <span className="material-symbols-outlined">edit</span>
-            </button>
-            <button
-              className="iconButton"
-              onClick={() => {
-                handleDelete(element.id)
-              }}
-            >
-              <span className="material-symbols-outlined">delete</span>
-            </button>
-          </div>
-        </IfAuthenticated>
+            </button> */}
+          <MdOutlineModeEdit className="iconButton" onClick={toggleVisible} />
+          {/* <button
+            className="iconButton"
+            onClick={() => {
+              handleDelete(element.id)
+            }}
+          >
+            <span className="material-symbols-outlined">delete</span>
+          </button> */}
+          <MdOutlineDelete
+            className="iconButton"
+            onClick={() => {
+              handleDelete(element.id)
+            }}
+          />
+        </div>
+        {/* </IfAuthenticated> */}
       </div>
 
       {/* edit form */}
