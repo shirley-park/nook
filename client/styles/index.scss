@@ -68,6 +68,28 @@ button {
   margin-top: 50px;
 }
 
+// Home carousel
+
+.carousel .control-next.control-arrow:before {
+  content: '';
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel .control-prev.control-arrow:before {
+  content: '';
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
 // ProjectCard component
 
 .projectCard {
@@ -331,7 +353,7 @@ button {
   background-color: rgba(255, 255, 255, 0.421);
   border: none;
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 25px;
   padding: 5px;
 
 }
@@ -395,6 +417,7 @@ footer {
   border-radius: 5px;
   font-size: 1rem;
 }
+
 
 //  Media queries
 
