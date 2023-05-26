@@ -290,6 +290,7 @@ button {
 
   .addFormField {
     margin-top: 15px;
+    width: 100%;
 
     label {
       font-weight: 400;
@@ -298,7 +299,7 @@ button {
   }
 
   input, textarea {
-    width: 50vw;
+    width: 100%;
     padding: 8px 8px 8px 8px;
     border: 1px solid rgba(128, 128, 128, 0.419);
     border-radius: 7px;
@@ -389,6 +390,14 @@ nav {
   display: grid;
   grid-template-columns: 100%;
 }
+
+.overlay__container {
+  margin: auto;
+  z-index: 10;
+  padding: 30px;
+
+}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px){
