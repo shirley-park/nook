@@ -8,7 +8,6 @@ import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
 import ElementCard from './ElementCard'
 import { IfAuthenticated } from './Authenticated'
-import MdOutlineModeEdit from 'react-icons/md'
 
 function FilteredElements() {
   const dispatch = useAppDispatch()

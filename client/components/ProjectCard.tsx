@@ -10,6 +10,7 @@ import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated } from './Authenticated'
+import { MdOutlineDelete } from 'react-icons/md'
 
 function ProjectCard({ project }: { project: projectModel }) {
   const { getAccessTokenSilently } = useAuth0()
@@ -58,14 +59,12 @@ function ProjectCard({ project }: { project: projectModel }) {
           <h3>{project.space}</h3>
         </Link>
         {/* <IfAuthenticated> */}
-        <button
+        <MdOutlineDelete
           className="iconButton"
           onClick={() => {
             handleDelete(project.id)
           }}
-        >
-          <span className="material-symbols-outlined">delete</span>
-        </button>
+        />
         {/* </IfAuthenticated> */}
       </div>
       <Link to={`/project/${project.id}`} state={{ project }} className="link">
