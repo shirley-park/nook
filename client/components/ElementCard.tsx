@@ -7,7 +7,8 @@ import {
 } from '../actions/elementsActions'
 import { IfAuthenticated } from './Authenticated'
 import { MdOutlineModeEdit, MdOutlineDelete } from 'react-icons/md'
-import EditElementOverlay from './EditElementOverlay'
+import { Modal } from 'react-responsive-modal'
+import 'react-responsive-modal/styles.css'
 
 function ElementCard({ element }: { element: elementModel }) {
   const dispatch = useAppDispatch()
@@ -49,22 +50,18 @@ function ElementCard({ element }: { element: elementModel }) {
   return (
     <>
       {/* // @ts-ignore */}
+      {/* edit form */}
       {editMode && (
-        <div
-          style={{
-            position: 'fixed',
-            background: ' rgba(0, 0, 0, 0.5)',
-            width: '100%',
-            height: '100%',
-            top: 0,
-            left: 0,
-            zIndex: 10,
+        <Modal
+          open={editMode}
+          onClose={toggleEditMode}
+          center
+          classNames={{
+            overlay: 'customOverlay',
+            modal: 'customModal',
           }}
         >
-          <form
-            onSubmit={handleSubmitEdit}
-            className="editForm overlay__container"
-          >
+          <form onSubmit={handleSubmitEdit} className="editForm">
             Edit your element
             <br />
             <br />
@@ -131,7 +128,7 @@ function ElementCard({ element }: { element: elementModel }) {
               Update
             </button>
           </form>
-        </div>
+        </Modal>
       )}
       <div key={element.id} className="elementCard">
         <div className="elementFlexContainer">
@@ -143,19 +140,9 @@ function ElementCard({ element }: { element: elementModel }) {
           <h4>{element.make}</h4>
           {/* <IfAuthenticated> */}
           <div className="editDeleteIcons">
-            {editMode ? (
-              <button onClick={toggleEditMode} className="cancelEdit">
-                cancel
-              </button>
-            ) : (
-              <MdOutlineModeEdit
-                className="iconButton"
-                onClick={toggleEditMode}
-              />
-            )}
-            {/* <button className="iconButton">
-              <MdOutlineModeEdit onClick={() => toggleEditMode(element.id)} />
-            </button> */}
+            <button className="iconButton">
+              <MdOutlineModeEdit onClick={toggleEditMode} />
+            </button>
 
             <button className="iconButton">
               <MdOutlineDelete
@@ -168,80 +155,6 @@ function ElementCard({ element }: { element: elementModel }) {
           {/* </IfAuthenticated> */}
         </div>
 
-        {/* edit form */}
-
-        {/* {editMode && (
-
-          <div>
-            <form onSubmit={handleSubmitEdit} className="editForm">
-              Edit your element
-              <br />
-              <br />
-              <label htmlFor="item_name" className="editLabel">
-                Name
-              </label>
-              <br />
-              <input
-                id="item_name"
-                value={formDeets.item_name}
-                type="text"
-                className="editInput"
-                onChange={changeHandler}
-              />
-              <br />
-              <label htmlFor="make" className="editLabel">
-                Brand/manufacturer
-              </label>
-              <br />
-              <input
-                id="make"
-                value={formDeets.make}
-                type="text"
-                className="editInput"
-                onChange={changeHandler}
-              />
-              <br />
-              <label htmlFor="description" className="editLabel">
-                Description, colour, etc.
-              </label>
-              <br />
-              <textarea
-                id="description"
-                value={formDeets.description}
-                className="editInput"
-                onChange={changeHandler}
-              />
-              <br />
-              <label htmlFor="imageUrls" className="editLabel">
-                Image Url
-              </label>
-              <br />
-              <input
-                id="imageUrl"
-                value={formDeets.imageUrl}
-                type="text"
-                className="editInput"
-                onChange={changeHandler}
-              />
-              <br />
-              <label htmlFor="element_tag" className="editLabel">
-                Tag
-              </label>
-              <br />
-              <input
-                id="element_tag"
-                value={formDeets.element_tag}
-                type="text"
-                className="editInput"
-                onChange={changeHandler}
-              />
-              <br />
-              <button className="addProjButton" type="submit">
-                Update
-              </button>
-            </form>
-          </div>
-        )} */}
         <hr />
         <img src={element.imageUrl} alt={element.item_name} />
         <p>{element.description}</p>

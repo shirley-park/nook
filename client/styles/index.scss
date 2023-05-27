@@ -366,11 +366,15 @@ border: none;
 }
 
 
-// edit element form
+// edit element modal and form
+
+.customModal {
+  border-radius: 20px;
+  max-width: 500px;
+  width: 80%;
+}
 
 .editForm {
-  border: 1px solid rgba(227, 186, 90, 0.187);
-  border-radius: 15px;
   padding: 10px;
 
   .editInput {
@@ -427,16 +431,16 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 nav {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-  .projectsGrid {
+.projectsGrid {
   display: grid;
   grid-template-columns: 100%;
 }

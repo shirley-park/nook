@@ -13,7 +13,6 @@ function App() {
       <header className="header">
         <Nav />
       </header>
-
       <FadeInAnimation wrapperElement="div">
         <div className="container loader">
           <section className="main">
