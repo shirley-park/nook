@@ -52,7 +52,7 @@ function FilteredElements() {
   }
 
   return (
-    <>
+    <div>
       {' '}
       <AnimatePresence>
         <h3>Elements</h3>
@@ -140,7 +140,7 @@ function FilteredElements() {
           ))}
         </section>
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 
