@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import Overlay from './Overlay'
+import AddProjectOverlay from './AddProjectOverlay'
 import { useState } from 'react'
-import AddProject from './AddProject'
+import AddProjectForm from './AddProjectForm'
 import { useAuth0 } from '@auth0/auth0-react'
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
@@ -38,9 +38,9 @@ function Nav() {
             add project
           </button>
 
-          <Overlay isOpen={isOpen} onClose={toggleOverlay}>
-            <AddProject />
-          </Overlay>
+          <AddProjectOverlay isOpen={isOpen} onClose={toggleOverlay}>
+            <AddProjectForm />
+          </AddProjectOverlay>
 
           {/* <button className="navbutton" onClick={handleSignOut}>
             sign out

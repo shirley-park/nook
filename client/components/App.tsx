@@ -4,7 +4,7 @@ import Footer from './Footer'
 import Home from './Home'
 import ProjectPage from './ProjectPage'
 import AllElements from './AllElements'
-import AddProject from './AddProject'
+import AddProjectForm from './AddProjectForm'
 import FadeInAnimation from './FadeInAnimation'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/project/:id" element={<ProjectPage />} />
               <Route path="/elements" element={<AllElements />} />
-              <Route path="/addProject" element={<AddProject />} />
+              <Route path="/addProject" element={<AddProjectForm />} />
             </Routes>
           </section>
         </div>
