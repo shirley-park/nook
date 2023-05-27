@@ -46,10 +46,9 @@ function ElementCard({ element }: { element: elementModel }) {
   const handleDelete = (id: number) => {
     dispatch(deleteElementThunk(id))
   }
-  // const isEditing = true
+
   return (
     <>
-      {/* // @ts-ignore */}
       {/* edit form */}
       {editMode && (
         <Modal
@@ -75,6 +74,7 @@ function ElementCard({ element }: { element: elementModel }) {
               type="text"
               className="editInput"
               onChange={changeHandler}
+              required
             />
             <br />
             <label htmlFor="make" className="editLabel">
@@ -87,6 +87,7 @@ function ElementCard({ element }: { element: elementModel }) {
               type="text"
               className="editInput"
               onChange={changeHandler}
+              required
             />
             <br />
             <label htmlFor="description" className="editLabel">
@@ -98,6 +99,7 @@ function ElementCard({ element }: { element: elementModel }) {
               value={formDeets.description}
               className="editInput"
               onChange={changeHandler}
+              required
             />
             <br />
             <label htmlFor="imageUrls" className="editLabel">
@@ -110,6 +112,7 @@ function ElementCard({ element }: { element: elementModel }) {
               type="text"
               className="editInput"
               onChange={changeHandler}
+              required
             />
             <br />
             <label htmlFor="element_tag" className="editLabel">
@@ -122,6 +125,7 @@ function ElementCard({ element }: { element: elementModel }) {
               type="text"
               className="editInput"
               onChange={changeHandler}
+              required
             />
             <br />
             <button className="addProjButton" type="submit">

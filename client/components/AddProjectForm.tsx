@@ -27,6 +27,7 @@ function AddProjectForm({ onClose }: overlayModel) {
   return (
     <>
       <form onSubmit={handleAdd} className="addProjectform">
+        Add your project
         <div className="addFormField">
           <label htmlFor="space">Which space are you working on?</label>
           <br />

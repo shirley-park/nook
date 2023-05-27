@@ -130,7 +130,7 @@ button {
 // Add project form
 
 .addProjectform {
-  width: 25vw;
+  width: 100%;
 
   .addFormField {
     margin-top: 15px;
@@ -141,7 +141,7 @@ button {
   }
 
   input, textarea {
-    width: 80%;
+    width: 90%;
     padding: 8px 8px 8px 8px;
     border: 1px solid rgba(128, 128, 128, 0.419);
     border-radius: 7px;
@@ -249,52 +249,6 @@ button {
     background-color: rgba(147, 147, 147, 0.198);
    
   }
-}
-
-// Add project overlay
-
-.overlay__background {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  z-index: 9;
-}
-
-.overlay__container {
-  background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  z-index: 10;
-  padding: 60px;
-  width: fit-content;
-  height: fit-content;
-}
-
-.overlay__controls {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.overlay__close:after {
-  display: inline-block;
-  content: "\00d7";
-}
-
-.overlay__close {
-  border: none;
-  background-color: transparent;
-  font-size: 30px;
-  cursor: pointer;
 }
 
 // Filtered Elements component
