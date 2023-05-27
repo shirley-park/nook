@@ -4,7 +4,7 @@ import { useAppDispatch } from '../hooks/redux'
 import { addNewProjectThunk } from '../actions/projectsActions'
 import overlayModel from '../models/overlayModel'
 
-function AddProject({ onClose }: overlayModel) {
+function AddProjectForm({ onClose }: overlayModel) {
   const dispatch = useAppDispatch()
 
   const [newProject, setNewProject] = useState({} as projectModel)
@@ -27,6 +27,7 @@ function AddProject({ onClose }: overlayModel) {
   return (
     <>
       <form onSubmit={handleAdd} className="addProjectform">
+        Add your project
         <div className="addFormField">
           <label htmlFor="space">Which space are you working on?</label>
           <br />
@@ -70,4 +71,4 @@ function AddProject({ onClose }: overlayModel) {
   )
 }
 
-export default AddProject
+export default AddProjectForm
