@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import FilteredElements from './FilteredElements'
-import FadeInAnimation from './FadeInAnimation'
+import { motion } from 'framer-motion'
 
 function ProjectPage() {
   const location = useLocation()
@@ -10,17 +10,20 @@ function ProjectPage() {
 
   return (
     <>
-      <FadeInAnimation wrapperElement="div">
-        <div>
-          <h3>{state.project.space}</h3>
-          <p>{state.project.description}</p>
-          <div className="projectInspGrid">
-            {projectImageArr.map((imageUrl: string, i: number) => (
-              <img src={imageUrl} alt={state.project.space} key={i} />
-            ))}
-          </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 1 }}
+        transition={{ duation: 0.5 }}
+      >
+        <h3>{state.project.space}</h3>
+        <p>{state.project.description}</p>
+        <div className="projectInspGrid">
+          {projectImageArr.map((imageUrl: string, i: number) => (
+            <img src={imageUrl} alt={state.project.space} key={i} />
+          ))}
         </div>
-      </FadeInAnimation>
+      </motion.div>
       <hr />
       <div>
         <FilteredElements />

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import AddProjectOverlay from './AddProjectOverlay'
 import { useState } from 'react'
 import AddProjectForm from './AddProjectForm'
-import { useAuth0 } from '@auth0/auth0-react'
+// import { useAuth0 } from '@auth0/auth0-react'
 // import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 function Nav() {

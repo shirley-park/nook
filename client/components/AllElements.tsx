@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { fetchAllElementsThunk } from '../actions/elementsActions'
 import elementModel from '../models/elementModel'
 import ElementCard from './ElementCard'
+import { motion } from 'framer-motion'
 
 function AllElements() {
   const dispatch = useAppDispatch()
@@ -18,11 +19,17 @@ function AllElements() {
   return (
     <>
       <h3>All Elements</h3>
-      <section className="elementsGrid">
+      <motion.section
+        className="elementsGrid"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 1 }}
+        transition={{ duation: 0.5 }}
+      >
         {allElements.map((element) => (
           <ElementCard key={element.id} element={element} />
         ))}
-      </section>
+      </motion.section>
     </>
   )
 }

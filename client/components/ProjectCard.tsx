@@ -8,7 +8,7 @@ import {
 } from '../actions/projectsActions'
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+// import { useAuth0 } from '@auth0/auth0-react'
 // import { IfAuthenticated } from './Authenticated'
 import { MdOutlineDelete } from 'react-icons/md'
 import { motion } from 'framer-motion'
