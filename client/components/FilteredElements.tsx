@@ -47,7 +47,9 @@ function FilteredElements() {
 
   const handleAddElement = (e: FormEvent) => {
     e.preventDefault()
-    dispatch(addNewElementThunk(newElement, projectId))
+    dispatch(addNewElementThunk(newElement, projectId)).then(() => {
+      setNewElement({} as elementModel)
+    })
   }
 
   return (
