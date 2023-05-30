@@ -68,10 +68,7 @@ export function deleteProjectThunk(
   token: string
 ): ThunkAction {
   return (dispatch) => {
-    return deleteProjectApi(
-      projectId
-      // token
-    )
+    return deleteProjectApi(projectId, token)
       .then(() => dispatch(deleteProject(projectId)))
       .catch((err) => err.message)
   }

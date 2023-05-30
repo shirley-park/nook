@@ -45,7 +45,6 @@ router.patch('/:id', (req, res) => {
   const id = Number(req.params.id)
   const amendments = req.body
 
-  console.log(amendments)
   db.updateElementDb(id, amendments)
     .then((updatedElement) => res.json(updatedElement))
     .catch((err) => err.message)

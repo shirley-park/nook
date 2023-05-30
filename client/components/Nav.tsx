@@ -33,24 +33,24 @@ function Nav() {
           <Link to="/elements" className="">
             <button className="navbutton">my elements</button>
           </Link>
-          {/* <IfAuthenticated> */}
-          <button className="navbutton" onClick={toggleOverlay}>
-            add project
-          </button>
+          <IfAuthenticated>
+            <button className="navbutton" onClick={toggleOverlay}>
+              add project
+            </button>
 
-          <AddProjectOverlay isOpen={isOpen} onClose={toggleOverlay}>
-            <AddProjectForm />
-          </AddProjectOverlay>
+            <AddProjectOverlay isOpen={isOpen} onClose={toggleOverlay}>
+              <AddProjectForm />
+            </AddProjectOverlay>
 
-          {/* <button className="navbutton" onClick={handleSignOut}>
-            sign out
-          </button> */}
-          {/* </IfAuthenticated> */}
-          {/* <IfNotAuthenticated>
+            <button className="navbutton" onClick={handleSignOut}>
+              sign out
+            </button>
+          </IfAuthenticated>
+          <IfNotAuthenticated>
             <button className="navbutton" onClick={handleSignIn}>
               sign in
             </button>
-          </IfNotAuthenticated> */}
+          </IfNotAuthenticated>
         </div>
       </nav>
     </>

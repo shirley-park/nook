@@ -55,11 +55,11 @@ function FilteredElements() {
     <div>
       {' '}
       <h3>Elements</h3>
-      {/* <IfAuthenticated> */}
-      <button className="addProjButton" onClick={toggleVisible}>
-        {formVisible ? 'collapse' : '+ click to add'}
-      </button>
-      {/* </IfAuthenticated> */}
+      <IfAuthenticated>
+        <button className="addProjButton" onClick={toggleVisible}>
+          {formVisible ? 'collapse' : '+ click to add'}
+        </button>
+      </IfAuthenticated>
       {/* toggle add Element form */}
       {formVisible && (
         <form onSubmit={handleAddElement} className="addElementform">

@@ -142,21 +142,21 @@ function ElementCard({ element }: { element: elementModel }) {
 
         <div className="h4AndSymbolsDiv">
           <h4>{element.make}</h4>
-          {/* <IfAuthenticated> */}
-          <div className="editDeleteIcons">
-            <button className="iconButton">
-              <MdOutlineModeEdit onClick={toggleEditMode} />
-            </button>
+          <IfAuthenticated>
+            <div className="editDeleteIcons">
+              <button className="iconButton">
+                <MdOutlineModeEdit onClick={toggleEditMode} />
+              </button>
 
-            <button className="iconButton">
-              <MdOutlineDelete
-                onClick={() => {
-                  handleDelete(element.id)
-                }}
-              />
-            </button>
-          </div>
-          {/* </IfAuthenticated> */}
+              <button className="iconButton">
+                <MdOutlineDelete
+                  onClick={() => {
+                    handleDelete(element.id)
+                  }}
+                />
+              </button>
+            </div>
+          </IfAuthenticated>
         </div>
 
         <hr />
