@@ -5,7 +5,7 @@ import {
   deleteElementThunk,
   updateElementThunk,
 } from '../actions/elementsActions'
-import { IfAuthenticated } from './Authenticated'
+// import { IfAuthenticated } from './Authenticated'
 import { MdOutlineModeEdit, MdOutlineDelete } from 'react-icons/md'
 import { Modal } from 'react-responsive-modal'
 import 'react-responsive-modal/styles.css'

@@ -21,11 +21,13 @@ export function addNewProjectApi(
 }
 
 export function deleteProjectApi(
-  projectId: number,
-  token: string
+  projectId: number
+  // token: string
 ): Promise<projectModel> {
-  return request
-    .delete(url + projectId)
-    .set('Authorization', `Bearer ${token}`)
-    .then((res) => res.body)
+  return (
+    request
+      .delete(url + projectId)
+      // .set('Authorization', `Bearer ${token}`)
+      .then((res) => res.body)
+  )
 }

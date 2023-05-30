@@ -9,12 +9,12 @@ import {
 import { useAppDispatch } from '../hooks/redux'
 import { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated } from './Authenticated'
+// import { IfAuthenticated } from './Authenticated'
 import { MdOutlineDelete } from 'react-icons/md'
 import { motion } from 'framer-motion'
 
 function ProjectCard({ project }: { project: projectModel }) {
-  const { getAccessTokenSilently } = useAuth0()
+  // const { getAccessTokenSilently } = useAuth0()
 
   const dispatch = useAppDispatch()
 
@@ -26,9 +26,14 @@ function ProjectCard({ project }: { project: projectModel }) {
 
   const handleDelete = async (projectId: projectModel['id']) => {
     try {
-      const token = await getAccessTokenSilently()
+      // const token = await getAccessTokenSilently()
 
-      const deleteProject = await dispatch(deleteProjectThunk(projectId, token))
+      const deleteProject = await dispatch(
+        deleteProjectThunk(
+          projectId
+          // token
+        )
+      )
 
       return deleteProject
     } catch (err: unknown) {

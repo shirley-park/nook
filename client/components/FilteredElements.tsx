@@ -7,8 +7,7 @@ import {
 import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
 import ElementCard from './ElementCard'
-import { IfAuthenticated } from './Authenticated'
-import { AnimatePresence, motion } from 'framer-motion'
+// import { IfAuthenticated } from './Authenticated'
 
 function FilteredElements() {
   const dispatch = useAppDispatch()

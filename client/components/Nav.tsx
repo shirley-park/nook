@@ -3,7 +3,7 @@ import AddProjectOverlay from './AddProjectOverlay'
 import { useState } from 'react'
 import AddProjectForm from './AddProjectForm'
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
+// import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,15 +12,15 @@ function Nav() {
     setIsOpen(!isOpen)
   }
 
-  const { user, logout, loginWithRedirect } = useAuth0()
+  // const { user, logout, loginWithRedirect } = useAuth0()
 
-  const handleSignOut = () => {
-    logout()
-  }
+  // const handleSignOut = () => {
+  //   logout()
+  // }
 
-  const handleSignIn = () => {
-    loginWithRedirect()
-  }
+  // const handleSignIn = () => {
+  //   loginWithRedirect()
+  // }
   return (
     <>
       <nav>

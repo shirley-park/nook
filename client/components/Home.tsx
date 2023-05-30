@@ -4,7 +4,7 @@ import { fetchAllProjectsThunk } from '../actions/projectsActions'
 import projectModel from '../models/projectModel'
 import ProjectCard from './ProjectCard'
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated } from './Authenticated'
+// import { IfAuthenticated } from './Authenticated'
 import { AnimatePresence } from 'framer-motion'
 
 function Home() {
