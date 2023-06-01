@@ -20,28 +20,28 @@ export type Action =
 
 // SIMPLE ACTIONS
 
-function receiveAllElements(dbElements: elementModel[]): Action {
+export function receiveAllElements(dbElements: elementModel[]): Action {
   return {
     type: 'RECEIVE_ELEMENTS',
     payload: dbElements,
   }
 }
 
-function addNewElementAction(newElement: elementModel): Action {
+export function addNewElementAction(newElement: elementModel): Action {
   return {
     type: 'ADD_ELEMENT',
     payload: newElement,
   }
 }
 
-function deleteElementAction(id: elementModel['id']): Action {
+export function deleteElementAction(id: elementModel['id']): Action {
   return {
     type: 'DELETE_ELEMENT',
     payload: id,
   }
 }
 
-function updateElementAction(amendedElement: elementModel) {
+export function updateElementAction(amendedElement: elementModel) {
   return {
     type: 'UPDATE_ELEMENT',
     payload: amendedElement,

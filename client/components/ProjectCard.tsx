@@ -3,11 +3,12 @@ import projectModel from '../models/projectModel'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {
-  deleteProjectThunk,
-  fetchAllProjectsThunk,
+  deleteProject,
+  // deleteProjectThunk,
+  // fetchAllProjectsThunk,
 } from '../actions/projectsActions'
 import { useAppDispatch } from '../hooks/redux'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 // import { useAuth0 } from '@auth0/auth0-react'
 // import { IfAuthenticated } from './Authenticated'
 import { MdOutlineDelete } from 'react-icons/md'
@@ -18,9 +19,9 @@ function ProjectCard({ project }: { project: projectModel }) {
 
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(fetchAllProjectsThunk())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchAllProjectsThunk())
+  // }, [dispatch])
 
   const projectImageArr = project.image.split(',')
 
@@ -28,14 +29,15 @@ function ProjectCard({ project }: { project: projectModel }) {
     try {
       // const token = await getAccessTokenSilently()
 
-      const deleteProject = await dispatch(
-        deleteProjectThunk(
-          projectId
-          // token
-        )
+      const deleteProjectAction = await dispatch(
+        // deleteProjectThunk(
+        //   projectId
+        //   token
+        // )
+        deleteProject(projectId)
       )
 
-      return deleteProject
+      return deleteProjectAction
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.log(err.message)

@@ -1,24 +1,27 @@
-import { useAppSelector, useAppDispatch } from '../hooks/redux'
-import { useEffect } from 'react'
-import { fetchAllProjectsThunk } from '../actions/projectsActions'
+import {
+  useAppSelector,
+  // useAppDispatch
+} from '../hooks/redux'
+// import { useEffect } from 'react'
+// import { fetchAllProjectsThunk } from '../actions/projectsActions'
 import projectModel from '../models/projectModel'
 import ProjectCard from './ProjectCard'
-import { useAuth0 } from '@auth0/auth0-react'
+// import { useAuth0 } from '@auth0/auth0-react'
 // import { IfAuthenticated } from './Authenticated'
 import { AnimatePresence } from 'framer-motion'
 
 function Home() {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(fetchAllProjectsThunk())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchAllProjectsThunk())
+  // }, [dispatch])
 
   const allProjects = useAppSelector(
     (state) => state.projectsState as projectModel[]
   )
 
-  const { user } = useAuth0()
+  // const { user } = useAuth0()
 
   return (
     <>

@@ -1,8 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import {
-  addNewElementThunk,
-  fetchAllElementsThunk,
+  addNewElementAction,
+  // addNewElementThunk,
+  // fetchAllElementsThunk,
 } from '../actions/elementsActions'
 import elementModel from '../models/elementModel'
 import { useParams } from 'react-router-dom'
@@ -12,16 +13,14 @@ import ElementCard from './ElementCard'
 function FilteredElements() {
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(fetchAllElementsThunk())
-  }, [dispatch])
-
   const params = useParams()
   const projectId = Number(params.id)
 
   const allElements = useAppSelector(
     (state) => state.elementsState as elementModel[]
   )
+
+  const newElementId = allElements.length + 1
 
   const filteredList = allElements.filter((el) => el.project_id === projectId)
 
@@ -42,14 +41,19 @@ function FilteredElements() {
     setNewElement({
       ...newElement,
       [e.target.id]: e.target.value,
+      id: newElementId,
+      project_id: projectId,
     })
   }
 
-  const handleAddElement = (e: FormEvent) => {
-    e.preventDefault()
-    dispatch(addNewElementThunk(newElement, projectId)).then(() => {
+  const handleAddElement = async (e: FormEvent) => {
+    try {
+      e.preventDefault()
+      dispatch(addNewElementAction(newElement))
       setNewElement({} as elementModel)
-    })
+    } catch {
+      console.log(Error)
+    }
   }
 
   return (
@@ -64,6 +68,19 @@ function FilteredElements() {
       {/* toggle add Element form */}
       {formVisible && (
         <form onSubmit={handleAddElement} className="addElementform">
+          <div className="addFormField">
+            <label htmlFor="projectId" hidden>
+              item tag
+            </label>
+            <br />
+            <input
+              id="projectId"
+              type="text"
+              value={projectId}
+              hidden
+              readOnly
+            />
+          </div>
           <div className="addFormField">
             <label htmlFor="item_name">Element item</label>
             <br />

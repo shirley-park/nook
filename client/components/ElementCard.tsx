@@ -1,9 +1,11 @@
 import { useAppDispatch } from '../hooks/redux'
-import { FormEvent, useState, ChangeEvent, useEffect, useRef } from 'react'
+import { FormEvent, useState, ChangeEvent, useEffect } from 'react'
 import elementModel from '../models/elementModel'
 import {
-  deleteElementThunk,
-  updateElementThunk,
+  deleteElementAction,
+  updateElementAction,
+  // deleteElementThunk,
+  // updateElementThunk,
 } from '../actions/elementsActions'
 // import { IfAuthenticated } from './Authenticated'
 import { MdOutlineModeEdit, MdOutlineDelete } from 'react-icons/md'
@@ -29,22 +31,24 @@ function ElementCard({ element }: { element: elementModel }) {
     setFormDeets({
       ...formDeets,
       [e.target.id]: e.target.value,
+      id: element.id,
     })
   }
 
-  const handleSubmitEdit = (e: FormEvent) => {
-    e.preventDefault()
-    dispatch(updateElementThunk(element.id, formDeets))
-      .then(() => {
-        setEditMode(!editMode)
-      })
-      .catch((err) => {
+  const handleSubmitEdit = async (e: FormEvent) => {
+    try {
+      e.preventDefault()
+      dispatch(updateElementAction(formDeets))
+      setEditMode(!editMode)
+    } catch (err: unknown) {
+      if (err instanceof Error) {
         console.log(err.message)
-      })
+      }
+    }
   }
 
   const handleDelete = (id: number) => {
-    dispatch(deleteElementThunk(id))
+    dispatch(deleteElementAction(id))
   }
 
   return (

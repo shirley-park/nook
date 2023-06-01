@@ -1,11 +1,18 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import projectModel from '../models/projectModel'
-import { useAppDispatch } from '../hooks/redux'
-import { addNewProjectThunk } from '../actions/projectsActions'
+import { useAppDispatch, useAppSelector } from '../hooks/redux'
+import {
+  addNewProject,
+  // addNewProjectThunk
+} from '../actions/projectsActions'
 import overlayModel from '../models/overlayModel'
 
 function AddProjectForm({ onClose }: overlayModel) {
   const dispatch = useAppDispatch()
+  const allProjects = useAppSelector(
+    (state) => state.projectsState as projectModel[]
+  )
+  const nextId = allProjects.length + 1
 
   const [newProject, setNewProject] = useState({} as projectModel)
 
@@ -15,12 +22,13 @@ function AddProjectForm({ onClose }: overlayModel) {
     setNewProject({
       ...newProject,
       [e.target.id]: e.target.value,
+      id: nextId,
     })
   }
 
   const handleAdd = (e: FormEvent) => {
     e.preventDefault()
-    dispatch(addNewProjectThunk(newProject))
+    dispatch(addNewProject(newProject))
     onClose()
   }
 
@@ -59,6 +67,7 @@ function AddProjectForm({ onClose }: overlayModel) {
             onChange={changeHandler}
             id="image"
             value={newProject.image || ''}
+            required
           />
           <br />
         </div>

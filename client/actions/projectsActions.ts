@@ -17,21 +17,21 @@ export type Action =
 
 // SIMPLE ACTIONS
 
-function receiveAllProjects(dbData: projectModel[]): Action {
+export function receiveAllProjects(dbData: projectModel[]): Action {
   return {
     type: 'RECEIVE_PROJECTS',
     payload: dbData,
   }
 }
 
-function addNewProject(newProject: projectModel): Action {
+export function addNewProject(newProject: projectModel): Action {
   return {
     type: 'ADD_PROJECT',
     payload: newProject,
   }
 }
 
-function deleteProject(projectId: number): Action {
+export function deleteProject(projectId: number): Action {
   return {
     type: 'DELETE_PROJECT',
     payload: projectId,

@@ -1,16 +1,19 @@
-import { useAppSelector, useAppDispatch } from '../hooks/redux'
-import { useEffect } from 'react'
-import { fetchAllElementsThunk } from '../actions/elementsActions'
+import {
+  useAppSelector,
+  // useAppDispatch
+} from '../hooks/redux'
+// import { useEffect } from 'react'
+// import { fetchAllElementsThunk } from '../actions/elementsActions'
 import elementModel from '../models/elementModel'
 import ElementCard from './ElementCard'
 import { motion } from 'framer-motion'
 
 function AllElements() {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
-  useEffect(() => {
-    dispatch(fetchAllElementsThunk())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchAllElementsThunk())
+  // }, [dispatch])
 
   const allElements = useAppSelector(
     (state) => state.elementsState as elementModel[]
