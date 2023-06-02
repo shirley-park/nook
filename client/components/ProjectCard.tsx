@@ -53,7 +53,6 @@ function ProjectCard({ project }: { project: projectModel }) {
       exit={{ opacity: 1 }}
       transition={{ duation: 0.5 }}
     >
-      {/* <div className="projectCard"> */}
       <div className="carouselBox">
         <Carousel
           useKeyboardArrows={true}
@@ -86,7 +85,6 @@ function ProjectCard({ project }: { project: projectModel }) {
         <p>{project.description}</p>
       </Link>
       <hr />
-      {/* </div> */}
     </motion.div>
   )
 }

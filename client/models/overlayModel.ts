@@ -3,3 +3,7 @@ export default interface overlayModel {
   onClose?: any
   children?: React.ReactNode
 }
+
+export interface editElementModal {
+  onClose?: any
+}
